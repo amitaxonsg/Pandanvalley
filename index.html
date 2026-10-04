@@ -1,174 +1,230 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pandan Valley Smart Estate MVP</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pandan Valley Smart Estate MVP</title>
+<link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-<header class="topbar">
+<header class="hero">
   <div>
     <div class="eyebrow">MCST 581 · Pandan Valley Condominium</div>
-    <h1>Smart Estate Management — MVP Demo</h1>
-    <p>Accountability dashboard for vendors, contractors, patrols, residents and SLA performance.</p>
+    <h1>Smart Estate Management — Enhanced MVP Demo</h1>
+    <p>Interactive concept by Axon 1Pro Solutions showing accountability, automation, AI-assisted operations and management reporting.</p>
   </div>
-  <div class="badge">DEMO DATA</div>
+  <div class="hero-actions"><span class="badge">DEMO DATA</span><span class="badge alt">MVP CONCEPT</span></div>
 </header>
 
 <main>
-  <section class="kpis">
-    <div class="card"><span>Vendors on-site</span><strong id="vendorsOnSite">7</strong><small>1 late arrival</small></div>
-    <div class="card"><span>Open issues</span><strong>12</strong><small>3 nearing SLA</small></div>
-    <div class="card"><span>Patrol completion</span><strong>92%</strong><small>11 / 12 checkpoints</small></div>
-    <div class="card"><span>MA compliance</span><strong>94%</strong><small>Projected deduction: S$420</small></div>
-  </section>
+<section class="intro card">
+  <div>
+    <h2>What this MVP demonstrates</h2>
+    <p>This prototype translates Pandan Valley's six requested functional areas into one connected workflow. The buttons below use realistic sample data so the management team can see how an actual estate system could behave.</p>
+  </div>
+  <div class="legend">
+    <span><b class="dot live"></b> Working demo interaction</span>
+    <span><b class="dot sim"></b> Simulated integration</span>
+    <span><b class="dot ai"></b> AI-assisted feature</span>
+  </div>
+</section>
 
-  <section class="modules">
-    <button class="module active" data-target="vendor">1. Vendor Reporting</button>
-    <button class="module" data-target="work">2. Digital Work Report</button>
-    <button class="module" data-target="contractor">3. Contractor / Mover</button>
-    <button class="module" data-target="patrol">4. Routine Works / Patrol</button>
-    <button class="module" data-target="resident">5. Resident Feedback</button>
-    <button class="module" data-target="sla">6. MA Evaluation / SLA</button>
-  </section>
+<section class="kpis">
+  <div class="card"><span>Vendors on-site</span><strong id="vendorsOnSite">7</strong><small>1 late arrival · 2 jobs in progress</small></div>
+  <div class="card"><span>Open resident issues</span><strong>12</strong><small>3 nearing SLA · 1 overdue</small></div>
+  <div class="card"><span>Patrol completion</span><strong>92%</strong><small>11 / 12 checkpoints verified</small></div>
+  <div class="card"><span>MA compliance</span><strong>94%</strong><small>Projected deduction: S$420</small></div>
+</section>
 
-  <section id="vendor" class="panel active">
-    <h2>Service Vendors Work Reporting</h2>
-    <div class="grid2">
-      <div class="box">
-        <h3>Vendor check-in</h3>
-        <label>Vendor<select><option>CleanPro Services</option><option>GreenScape Landscaping</option><option>SecureGuard</option></select></label>
-        <label>Worker ID<input value="CP-0187" /></label>
-        <div class="statusline"><span>GPS</span><b class="ok">Inside Pandan Valley geofence</b></div>
-        <div class="statusline"><span>Face match</span><b class="ok">Verified (demo)</b></div>
-        <button id="checkinBtn">Check In Worker</button>
-      </div>
-      <div class="box">
-        <h3>Live accountability</h3>
-        <table><thead><tr><th>Worker</th><th>In</th><th>Status</th></tr></thead>
-        <tbody id="vendorTable">
-          <tr><td>CP-0181</td><td>07:58</td><td><span class="pill good">On site</span></td></tr>
-          <tr><td>CP-0184</td><td>08:11</td><td><span class="pill warn">Late</span></td></tr>
-          <tr><td>GS-0052</td><td>08:02</td><td><span class="pill good">On site</span></td></tr>
-        </tbody></table>
-        <p class="note">Production: phone GPS watches the defined estate boundary. Leaving it triggers auto-check-out and records time/location.</p>
-      </div>
+<section class="modules">
+  <button class="module active" data-target="vendor">1. Vendor Reporting</button>
+  <button class="module" data-target="work">2. Digital Work Report</button>
+  <button class="module" data-target="contractor">3. Contractor / Mover</button>
+  <button class="module" data-target="patrol">4. Routine Works / Patrol</button>
+  <button class="module" data-target="resident">5. Resident Feedback</button>
+  <button class="module" data-target="sla">6. MA Evaluation / SLA</button>
+</section>
+
+<section id="vendor" class="panel active">
+  <div class="panelhead"><div><span class="step">1</span><h2>Service Vendors Work Reporting</h2></div><span class="tag">GPS · Attendance · Geo-Fence</span></div>
+  <div class="grid2">
+    <div class="box">
+      <h3>Live demo: vendor check-in</h3>
+      <label>Vendor<select><option>CleanPro Services</option><option>GreenScape Landscaping</option><option>SecureGuard</option></select></label>
+      <label>Worker ID<input value="CP-0187"/></label>
+      <div class="statusline"><span>GPS position</span><b class="ok">Inside Pandan Valley geofence</b></div>
+      <div class="statusline"><span>Identity</span><b class="ok">Verified (simulated)</b></div>
+      <div class="statusline"><span>Scheduled start</span><b>08:00</b></div>
+      <button id="checkinBtn">Check In Worker</button>
+      <div id="vendorToast" class="result subtle">Try the check-in button.</div>
     </div>
-  </section>
-
-  <section id="work" class="panel">
-    <h2>Digital Work Reporting</h2>
-    <div class="grid2">
-      <div class="box">
-        <h3>Job: Block 3 Level 2 water seepage</h3>
-        <label>Scope<textarea>Inspect source, repair affected pipe joint, clean area and verify no further leakage.</textarea></label>
-        <div class="photoPair">
-          <div><span>BEFORE</span><div class="photo ph1">08:42 · GPS locked</div></div>
-          <div><span>AFTER</span><div class="photo ph2">10:16 · GPS locked</div></div>
-        </div>
-        <button id="verifyPhotos">Verify Before / After Pair</button>
-      </div>
-      <div class="box">
-        <h3>Checklist</h3>
-        <label><input type="checkbox" checked/> Area isolated</label>
-        <label><input type="checkbox" checked/> Repair completed</label>
-        <label><input type="checkbox" checked/> Area cleaned</label>
-        <label><input type="checkbox"/> MA final inspection</label>
-        <div id="photoResult" class="result">Awaiting verification</div>
-        <p class="note">Production: capture from camera only, store timestamp, GPS, device ID and file hash so replacement/static uploads can be detected.</p>
-      </div>
+    <div class="box">
+      <h3>Live accountability</h3>
+      <table><thead><tr><th>Worker</th><th>In</th><th>Vendor</th><th>Status</th></tr></thead>
+      <tbody id="vendorTable">
+        <tr><td>CP-0181</td><td>07:58</td><td>CleanPro</td><td><span class="pill good">On site</span></td></tr>
+        <tr><td>CP-0184</td><td>08:11</td><td>CleanPro</td><td><span class="pill warn">Late</span></td></tr>
+        <tr><td>GS-0052</td><td>08:02</td><td>GreenScape</td><td><span class="pill good">On site</span></td></tr>
+      </tbody></table>
+      <div class="flow"><b>How it works</b><span>Arrive → GPS verified → identity checked → time logged → alerts if late → auto-check-out when leaving estate boundary.</span></div>
+      <div class="recommend"><b>Axon recommendation</b><span>Use geofencing first. Keep facial recognition optional and subject to privacy, consent and PDPA review.</span></div>
+      <div class="aiuse"><b>AI usage</b><span>AI can identify attendance anomalies, repeated late patterns and unusual check-in behaviour for management review.</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contractor" class="panel">
-    <h2>Contractor / Mover Registration & Reporting</h2>
-    <div class="grid2">
-      <div class="box">
-        <h3>Register visit</h3>
-        <label>Company<input value="ABC Movers Pte Ltd"/></label>
-        <label>Unit<input value="#12-308"/></label>
-        <label>Vehicle<input value="GBD 4821 K"/></label>
-        <label>Date<input type="date" value="2026-10-06"/></label>
-        <button id="issuePass">Approve & Issue Digital Pass</button>
+<section id="work" class="panel">
+  <div class="panelhead"><div><span class="step">2</span><h2>Digital Work Reporting</h2></div><span class="tag">Before / After · Checklist · Evidence</span></div>
+  <div class="grid2">
+    <div class="box">
+      <h3>Sample job: Block 3 L2 water seepage</h3>
+      <label>Scope<textarea>Inspect source, repair affected pipe joint, clean area, test and verify no further leakage.</textarea></label>
+      <div class="photoPair">
+        <div><span>BEFORE</span><div class="photo ph1">08:42 · GPS 1.3198,103.7769 · Device CP18</div></div>
+        <div><span>AFTER</span><div class="photo ph2">10:16 · GPS 1.3198,103.7769 · Device CP18</div></div>
       </div>
-      <div class="box center">
-        <div class="qr" id="qrBox">QR</div>
-        <h3 id="passTitle">Temporary pass not issued</h3>
-        <p id="passInfo">Approved passes can be sent by SMS/email and scanned by security at the gate.</p>
-      </div>
+      <button id="verifyPhotos">Verify Before / After Pair</button>
+      <div id="photoResult" class="result">Awaiting verification</div>
     </div>
-  </section>
+    <div class="box">
+      <h3>Completion checklist</h3>
+      <label><input type="checkbox" checked/> Work area isolated</label>
+      <label><input type="checkbox" checked/> Repair completed</label>
+      <label><input type="checkbox" checked/> Test passed</label>
+      <label><input type="checkbox" checked/> Area cleaned</label>
+      <label><input type="checkbox"/> MA final inspection</label>
+      <div class="flow"><b>How it works</b><span>Work order created → contractor captures BEFORE image in-app → completes checklist → captures AFTER image → MA verifies → ticket closes.</span></div>
+      <div class="recommend"><b>Axon recommendation</b><span>Force camera capture for critical jobs instead of gallery upload. Store timestamp, GPS, device ID and a file hash for audit trail.</span></div>
+      <div class="aiuse"><b>AI usage</b><span>AI can compare before/after images, flag poor completion quality, detect missing evidence and summarize contractor performance.</span></div>
+    </div>
+  </div>
+</section>
 
-  <section id="patrol" class="panel">
-    <h2>Routine Works, NFC Checkpoints & Patrol Route</h2>
-    <div class="grid2">
-      <div class="box">
-        <h3>Security patrol — Night Route A</h3>
-        <div id="routeList">
-          <div class="checkpoint done">✓ Main Gate <small>22:03 NFC</small></div>
-          <div class="checkpoint done">✓ Block 1 Lobby <small>22:11 NFC</small></div>
-          <div class="checkpoint done">✓ Pool Deck <small>22:18 NFC</small></div>
-          <div class="checkpoint" id="pendingPoint">○ Block 4 Carpark <small>Pending</small></div>
-        </div>
-        <button id="tapNfc">Simulate NFC Tap at Block 4</button>
-      </div>
-      <div class="box">
-        <h3>Route verification</h3>
-        <div class="routeMap">
-          <span class="dot d1">1</span><span class="line l1"></span>
-          <span class="dot d2">2</span><span class="line l2"></span>
-          <span class="dot d3">3</span><span class="line l3"></span>
-          <span class="dot d4">4</span>
-        </div>
-        <p class="note">Production: low-cost NFC tags at physical locations. Staff phone must tap the tag; system compares required route, order, timing and missing points.</p>
-      </div>
+<section id="contractor" class="panel">
+  <div class="panelhead"><div><span class="step">3</span><h2>Contractor / Mover Registration</h2></div><span class="tag">QR Pass · Gate Verification · Alerts</span></div>
+  <div class="grid2">
+    <div class="box">
+      <h3>Register a contractor visit</h3>
+      <label>Company<input value="ABC Movers Pte Ltd"/></label>
+      <label>Unit<input value="#12-308"/></label>
+      <label>Vehicle<input value="GBD 4821 K"/></label>
+      <label>Visit date<input type="date" value="2026-10-06"/></label>
+      <button id="issuePass">Approve & Issue Digital Pass</button>
+      <div class="flow"><b>How it works</b><span>Resident/MA submits → office approves → temporary QR generated → sent to contractor → security scans at gate → entry is recorded.</span></div>
     </div>
-  </section>
+    <div class="box center">
+      <div class="qr" id="qrBox">QR</div>
+      <h3 id="passTitle">Temporary pass not issued</h3>
+      <p id="passInfo">Approved passes can be sent by email/SMS and scanned by security.</p>
+      <div class="recommend left"><b>Axon recommendation</b><span>Use expiring signed QR passes. Gate staff should see company, unit, vehicle, valid time window and approval status.</span></div>
+      <div class="aiuse left"><b>AI usage</b><span>AI can detect suspicious repeat visits, unusual access times and contractor patterns that deserve review.</span></div>
+    </div>
+  </div>
+</section>
 
-  <section id="resident" class="panel">
-    <h2>Residents’ Feedback & Issue Resolution Tracking</h2>
-    <div class="grid2">
-      <div class="box">
-        <h3>Resident report</h3>
-        <label>Location<select><option>Block 2 Lift Lobby</option><option>Pool Deck</option><option>Carpark</option></select></label>
-        <label>Issue<textarea>Ceiling light flickering near lift.</textarea></label>
-        <button id="submitTicket">Submit Issue</button>
+<section id="patrol" class="panel">
+  <div class="panelhead"><div><span class="step">4</span><h2>Routine Works & Patrol Verification</h2></div><span class="tag">NFC · Route · Time Stamp</span></div>
+  <div class="grid2">
+    <div class="box">
+      <h3>Security patrol — Night Route A</h3>
+      <div id="routeList">
+        <div class="checkpoint done">✓ Main Gate <small>22:03 NFC</small></div>
+        <div class="checkpoint done">✓ Block 1 Lobby <small>22:11 NFC</small></div>
+        <div class="checkpoint done">✓ Pool Deck <small>22:18 NFC</small></div>
+        <div class="checkpoint" id="pendingPoint">○ Block 4 Carpark <small>Pending</small></div>
       </div>
-      <div class="box">
-        <h3>Ticket PV-2026-1042</h3>
-        <div class="progress"><div id="progressBar"></div></div>
-        <div class="steps"><span class="on">Reported</span><span id="s2">Assigned</span><span id="s3">In Progress</span><span id="s4">Resolved</span></div>
-        <p id="ticketText">No live ticket created yet.</p>
-        <button id="advanceTicket">Advance Demo Status</button>
-      </div>
+      <button id="tapNfc">Simulate NFC Tap at Block 4</button>
+      <div class="flow"><b>How it works</b><span>Officer follows assigned route → taps physical NFC tag → system logs checkpoint/time → missing or late checkpoints create exceptions.</span></div>
     </div>
-  </section>
+    <div class="box">
+      <h3>Route verification</h3>
+      <div class="routeMap">
+        <span class="dotn d1">1</span><span class="line l1"></span>
+        <span class="dotn d2">2</span><span class="line l2"></span>
+        <span class="dotn d3">3</span><span class="line l3"></span>
+        <span class="dotn d4">4</span>
+      </div>
+      <div class="recommend"><b>Axon recommendation</b><span>Use low-cost NFC tags at key points for security, cleaning and landscape routes. Combine with timing thresholds, not only GPS.</span></div>
+      <div class="aiuse"><b>AI usage</b><span>AI can detect rushed patrols, impossible route timings, recurring skipped zones and recommend route adjustments.</span></div>
+    </div>
+  </div>
+</section>
 
-  <section id="sla" class="panel">
-    <h2>Managing Agent Evaluation & SLA Financial Penalty</h2>
-    <div class="grid2">
-      <div class="box">
-        <h3>Sample exceptions this month</h3>
-        <table><thead><tr><th>Event</th><th>Demerit</th><th>Clause</th></tr></thead><tbody>
-          <tr><td>Vendor late &gt;15 min</td><td>2</td><td>S$60</td></tr>
-          <tr><td>Overdue resident ticket</td><td>5</td><td>S$200</td></tr>
-          <tr><td>Missed patrol checkpoint</td><td>3</td><td>S$160</td></tr>
-        </tbody></table>
-      </div>
-      <div class="box">
-        <h3>Automated calculation</h3>
-        <div class="bigNumber">10 <small>demerit points</small></div>
-        <div class="bigNumber">S$420 <small>suggested SLA deduction</small></div>
-        <button id="recalc">Recalculate Compliance Score</button>
-        <div id="slaResult" class="result">Compliance score: 94%</div>
-        <p class="note">Production: penalty values come from the signed contract rules configured by MA. System suggests deductions; authorised staff approve before any billing action.</p>
-      </div>
+<section id="resident" class="panel">
+  <div class="panelhead"><div><span class="step">5</span><h2>Residents’ Feedback & Issue Tracking</h2></div><span class="tag">QR Feedback · SLA · Live Status</span></div>
+  <div class="grid2">
+    <div class="box">
+      <h3>Create a resident issue</h3>
+      <label>Location<select><option>Block 2 Lift Lobby</option><option>Pool Deck</option><option>Carpark</option></select></label>
+      <label>Issue<textarea>Ceiling light flickering near lift.</textarea></label>
+      <button id="submitTicket">Submit Issue</button>
+      <div class="flow"><b>How it works</b><span>Resident scans location QR → issue form opens with location pre-filled → ticket created → SLA timer starts → resident gets tracking link.</span></div>
     </div>
-  </section>
+    <div class="box">
+      <h3>Ticket PV-2026-1042</h3>
+      <div class="progress"><div id="progressBar"></div></div>
+      <div class="steps"><span class="on">Reported</span><span id="s2">Assigned</span><span id="s3">In Progress</span><span id="s4">Resolved</span></div>
+      <p id="ticketText">No live ticket created yet.</p>
+      <button id="advanceTicket">Advance Demo Status</button>
+      <div class="recommend"><b>Axon recommendation</b><span>Place QR codes at common facilities and blocks. Let residents track status without logging in for low-risk issues, using a secure ticket token.</span></div>
+      <div class="aiuse"><b>AI usage</b><span>AI can classify complaints, detect duplicates, summarize long resident messages, route tickets and suggest priority based on impact.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sla" class="panel">
+  <div class="panelhead"><div><span class="step">6</span><h2>Managing Agent Evaluation & SLA</h2></div><span class="tag">Demerit · Compliance · Financial Penalty</span></div>
+  <div class="grid2">
+    <div class="box">
+      <h3>Sample October exceptions</h3>
+      <table><thead><tr><th>Event</th><th>Demerit</th><th>Suggested penalty</th></tr></thead><tbody>
+        <tr><td>Vendor late >15 min</td><td>2</td><td>S$60</td></tr>
+        <tr><td>Resident ticket overdue</td><td>5</td><td>S$200</td></tr>
+        <tr><td>Missed patrol checkpoint</td><td>3</td><td>S$160</td></tr>
+      </tbody></table>
+      <div class="flow"><b>How it works</b><span>Operational exceptions are captured automatically → SLA rule matched → demerit calculated → suggested financial impact shown → authorised MA user approves.</span></div>
+    </div>
+    <div class="box">
+      <h3>Automated calculation</h3>
+      <div class="bigNumber">10 <small>demerit points</small></div>
+      <div class="bigNumber">S$420 <small>suggested SLA deduction</small></div>
+      <button id="recalc">Recalculate Compliance Score</button>
+      <div id="slaResult" class="result">Compliance score: 94%</div>
+      <div class="recommend"><b>Axon recommendation</b><span>Keep financial deductions as recommendations only. Final approval should remain with authorised management personnel.</span></div>
+      <div class="aiuse"><b>AI usage</b><span>AI can explain why a score changed, forecast vendor risk and generate monthly council-ready performance summaries.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="strategy card">
+  <h2>Axon Proposed Smart Estate Architecture</h2>
+  <div class="strategygrid">
+    <div><h3>Resident Portal</h3><p>Feedback, service requests, ticket tracking and contractor registration.</p></div>
+    <div><h3>Vendor / Staff Mobile</h3><p>Attendance, geofence, job reports, photos, patrol and NFC workflows.</p></div>
+    <div><h3>Security Gate</h3><p>QR validation, contractor entry, vehicle verification and exception alerts.</p></div>
+    <div><h3>MA Dashboard</h3><p>Live issues, vendor activity, SLA, demerits, reports and approvals.</p></div>
+    <div><h3>AI Assist Layer</h3><p>Classification, anomaly detection, summaries, image checks and management insights.</p></div>
+    <div><h3>Audit & Reporting</h3><p>Time-stamped history, evidence, exports, monthly reports and council review.</p></div>
+  </div>
+</section>
+
+<section class="roadmap card">
+  <h2>Recommended rollout</h2>
+  <div class="roadgrid">
+    <div><b>Phase 1 — Core Operations</b><span>Vendor attendance, work reporting, resident tickets, admin dashboard.</span></div>
+    <div><b>Phase 2 — Access & Evidence</b><span>QR contractor passes, security gate workflow, photo verification, notifications.</span></div>
+    <div><b>Phase 3 — Physical Accountability</b><span>NFC routes, geofence auto-check-out, stronger identity controls.</span></div>
+    <div><b>Phase 4 — Intelligence</b><span>SLA engine, AI insights, vendor scoring, analytics, exports and integrations.</span></div>
+  </div>
+</section>
+
+<section class="disclaimer card">
+  <h2>Important MVP note</h2>
+  <p>This is a concept demonstration using sample data. GPS tracking, facial recognition, NFC hardware, SMS/email delivery, secure QR validation, production AI, payment/SLA deductions and external-system integrations are simulated until the production backend and approved integrations are implemented.</p>
+</section>
 </main>
 
-<footer>Axon 1Pro Solutions · Concept MVP for MCST 581 Pandan Valley · Not production data</footer>
+<footer>Axon 1Pro Solutions · Smart Estate MVP Concept for MCST 581 Pandan Valley</footer>
 <script src="app.js"></script>
 </body>
 </html>

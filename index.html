@@ -267,7 +267,7 @@
       <label>Resident message<textarea id="residentMessage">The ceiling light near the Block 2 lift has been flickering again since yesterday evening.</textarea></label>
       <button id="submitTicket">Submit Issue</button>
       <button id="classifyTicket" class="ai-button">AI Assist: Classify & Summarise</button>
-      <div id="classificationResult" class="ai-summary small"><b>AI assistance ready.</b><p>Runs in simulation mode until a secure AI backend is connected.</p></div>
+      <div id="classificationResult" class="ai-summary small"><b>SEA-LION AI assistance ready.</b><p>Runs in POC/simulation mode until the secure SEA-LION backend is deployed.</p></div>
     </div>
     <div class="box">
       <h3>Ticket PV-2026-1042</h3>
@@ -356,15 +356,15 @@
   </div>
   <div class="report-actions">
     <button id="generateAiSummary" class="ai-button">Generate AI Management Summary</button>
-    <span id="aiModeLabel">AI Simulation Mode</span>
+    <span id="aiModeLabel">SEA-LION POC / Simulation Mode</span>
   </div>
   <div id="aiSummary" class="ai-summary"><b>AI summary ready to demonstrate.</b><p>When a secure SEA-LION backend is connected, this button can generate a live narrative from system data.</p></div>
 </section>
 
 <section class="card ai-lab">
   <div class="section-title">
-    <div><span class="mini-label">OPTIONAL AI LAYER</span><h2>SEA-LION-ready AI Assistance</h2></div>
-    <span class="soft-pill" id="aiConnection">Secure backend not connected</span>
+    <div><span class="mini-label">OPTIONAL AI LAYER</span><h2>AI Assistance powered by SEA-LION — AI Singapore</h2><p class="muted">SEA-LION (Southeast Asian Languages in One Network) is developed by AI Singapore for Southeast Asian languages, contexts and use cases.</p></div>
+    <span class="soft-pill" id="aiConnection">SEA-LION Development / POC Mode</span>
   </div>
   <div class="ai-grid">
     <div><h3>Resident Support</h3><p>Classification, duplicate detection, summaries and draft replies for MA approval.</p></div>
@@ -372,7 +372,13 @@
     <div><h3>Vendor Intelligence</h3><p>Attendance anomalies, vendor trends and recurring under-performance patterns.</p></div>
     <div><h3>Council Reporting</h3><p>Turn operational data into short monthly management narratives.</p></div>
   </div>
-  <div class="note"><b>Security:</b> The SEA-LION API key must never be placed in this public GitHub Pages JavaScript. Store it as a GitHub Secret or backend environment secret and expose only a controlled server-side endpoint to this page.</div>
+  <div class="note"><b>Development AI:</b> This MVP is designed to use SEA-LION by AI Singapore through a secure server-side endpoint. The current trial API is free for prototyping, rate-limited to <b>10 requests per minute</b>, and is not for production/commercial deployment. Production AI will require an approved production deployment or commercial hosting arrangement. <a href="https://playground.sea-lion.ai/" target="_blank" rel="noopener">More information / SEA-LION Playground</a>.</div>
+  <div class="sea-badge-row">
+    <span class="sea-badge">AI Singapore</span>
+    <span class="sea-badge">SEA-LION</span>
+    <span class="sea-badge">Southeast Asia focused</span>
+    <span class="sea-badge">Development API: 10 RPM</span>
+  </div>
 </section>
 
 <section class="card">

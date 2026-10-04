@@ -284,3 +284,34 @@ In addition to the original six operational modules, the commercial proposal may
 6. Resident PWA Portal
 
 These are add-on modules and **do not require replacement of existing facility booking or gate systems**.
+
+
+## Resident Portal / PWA — Core V2 Requirement
+
+For Pandan Valley, the Resident Portal / PWA is treated as a **must-have V2 function**, not merely an optional presentation feature.
+
+Residents must be able to:
+- log in securely
+- report estate incidents/issues
+- choose category, block/location and urgency
+- attach a photograph
+- receive a ticket number
+- track progress
+- see MA public replies
+- add follow-up comments and additional photographs
+- reopen eligible resolved cases
+- view contractor/mover pass status
+- receive estate notices
+- read monthly circulars
+- acknowledge important notices
+- view a notification centre
+- view/update basic unit/profile information
+
+Ticket lifecycle:
+**Reported → Assigned → In Progress → Waiting Resident → Resolved**
+
+MA internal notes remain private.
+
+The resident interface is designed as an installable **Progressive Web App (PWA)** for supported iOS, Android and desktop browsers. Native App Store / Google Play packaging can be quoted separately if required.
+
+A playable Resident PWA concept is included in the GitHub Pages MVP while the full-stack database version is being implemented.

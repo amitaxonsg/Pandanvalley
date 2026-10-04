@@ -62,3 +62,31 @@ For more than 1,000 residents, special integrations, enterprise requirements or 
 **support@axon.com.sg**
 
 https://axon.com.sg
+
+
+## Subscription vs One-Off Customized Build
+
+### SEMS Subscription Platform — Recommended
+
+- Lower initial development cost
+- Dedicated client data environment
+- Ongoing platform updates
+- Security/compatibility updates
+- API/integration maintenance
+- SEA-LION/AI integration maintenance
+- PWA/browser/mobile compatibility updates
+- Common product improvements
+- Recurring subscription / annual maintenance
+
+### One-Off Customized Build — Custom Quote
+
+- Fully customized scope
+- Higher initial development cost
+- Source/deployment handover can be agreed contractually
+- Client may appoint its own IT team, webmaster or software developer
+- Future API/provider changes are client responsibility unless separately contracted
+- Security/compatibility work is separately maintained
+- Separate hosting/support arrangement
+- Future feature development quoted separately
+
+**Request One-Off Custom Quote:** support@axon.com.sg

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pandan Valley Smart Estate MVP</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="eyebrow">MCST 581 · Pandan Valley Condominium</div>
+    <h1>Smart Estate Management — MVP Demo</h1>
+    <p>Accountability dashboard for vendors, contractors, patrols, residents and SLA performance.</p>
+  </div>
+  <div class="badge">DEMO DATA</div>
+</header>
+
+<main>
+  <section class="kpis">
+    <div class="card"><span>Vendors on-site</span><strong id="vendorsOnSite">7</strong><small>1 late arrival</small></div>
+    <div class="card"><span>Open issues</span><strong>12</strong><small>3 nearing SLA</small></div>
+    <div class="card"><span>Patrol completion</span><strong>92%</strong><small>11 / 12 checkpoints</small></div>
+    <div class="card"><span>MA compliance</span><strong>94%</strong><small>Projected deduction: S$420</small></div>
+  </section>
+
+  <section class="modules">
+    <button class="module active" data-target="vendor">1. Vendor Reporting</button>
+    <button class="module" data-target="work">2. Digital Work Report</button>
+    <button class="module" data-target="contractor">3. Contractor / Mover</button>
+    <button class="module" data-target="patrol">4. Routine Works / Patrol</button>
+    <button class="module" data-target="resident">5. Resident Feedback</button>
+    <button class="module" data-target="sla">6. MA Evaluation / SLA</button>
+  </section>
+
+  <section id="vendor" class="panel active">
+    <h2>Service Vendors Work Reporting</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Vendor check-in</h3>
+        <label>Vendor<select><option>CleanPro Services</option><option>GreenScape Landscaping</option><option>SecureGuard</option></select></label>
+        <label>Worker ID<input value="CP-0187" /></label>
+        <div class="statusline"><span>GPS</span><b class="ok">Inside Pandan Valley geofence</b></div>
+        <div class="statusline"><span>Face match</span><b class="ok">Verified (demo)</b></div>
+        <button id="checkinBtn">Check In Worker</button>
+      </div>
+      <div class="box">
+        <h3>Live accountability</h3>
+        <table><thead><tr><th>Worker</th><th>In</th><th>Status</th></tr></thead>
+        <tbody id="vendorTable">
+          <tr><td>CP-0181</td><td>07:58</td><td><span class="pill good">On site</span></td></tr>
+          <tr><td>CP-0184</td><td>08:11</td><td><span class="pill warn">Late</span></td></tr>
+          <tr><td>GS-0052</td><td>08:02</td><td><span class="pill good">On site</span></td></tr>
+        </tbody></table>
+        <p class="note">Production: phone GPS watches the defined estate boundary. Leaving it triggers auto-check-out and records time/location.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="panel">
+    <h2>Digital Work Reporting</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Job: Block 3 Level 2 water seepage</h3>
+        <label>Scope<textarea>Inspect source, repair affected pipe joint, clean area and verify no further leakage.</textarea></label>
+        <div class="photoPair">
+          <div><span>BEFORE</span><div class="photo ph1">08:42 · GPS locked</div></div>
+          <div><span>AFTER</span><div class="photo ph2">10:16 · GPS locked</div></div>
+        </div>
+        <button id="verifyPhotos">Verify Before / After Pair</button>
+      </div>
+      <div class="box">
+        <h3>Checklist</h3>
+        <label><input type="checkbox" checked/> Area isolated</label>
+        <label><input type="checkbox" checked/> Repair completed</label>
+        <label><input type="checkbox" checked/> Area cleaned</label>
+        <label><input type="checkbox"/> MA final inspection</label>
+        <div id="photoResult" class="result">Awaiting verification</div>
+        <p class="note">Production: capture from camera only, store timestamp, GPS, device ID and file hash so replacement/static uploads can be detected.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contractor" class="panel">
+    <h2>Contractor / Mover Registration & Reporting</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Register visit</h3>
+        <label>Company<input value="ABC Movers Pte Ltd"/></label>
+        <label>Unit<input value="#12-308"/></label>
+        <label>Vehicle<input value="GBD 4821 K"/></label>
+        <label>Date<input type="date" value="2026-10-06"/></label>
+        <button id="issuePass">Approve & Issue Digital Pass</button>
+      </div>
+      <div class="box center">
+        <div class="qr" id="qrBox">QR</div>
+        <h3 id="passTitle">Temporary pass not issued</h3>
+        <p id="passInfo">Approved passes can be sent by SMS/email and scanned by security at the gate.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="patrol" class="panel">
+    <h2>Routine Works, NFC Checkpoints & Patrol Route</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Security patrol — Night Route A</h3>
+        <div id="routeList">
+          <div class="checkpoint done">✓ Main Gate <small>22:03 NFC</small></div>
+          <div class="checkpoint done">✓ Block 1 Lobby <small>22:11 NFC</small></div>
+          <div class="checkpoint done">✓ Pool Deck <small>22:18 NFC</small></div>
+          <div class="checkpoint" id="pendingPoint">○ Block 4 Carpark <small>Pending</small></div>
+        </div>
+        <button id="tapNfc">Simulate NFC Tap at Block 4</button>
+      </div>
+      <div class="box">
+        <h3>Route verification</h3>
+        <div class="routeMap">
+          <span class="dot d1">1</span><span class="line l1"></span>
+          <span class="dot d2">2</span><span class="line l2"></span>
+          <span class="dot d3">3</span><span class="line l3"></span>
+          <span class="dot d4">4</span>
+        </div>
+        <p class="note">Production: low-cost NFC tags at physical locations. Staff phone must tap the tag; system compares required route, order, timing and missing points.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="resident" class="panel">
+    <h2>Residents’ Feedback & Issue Resolution Tracking</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Resident report</h3>
+        <label>Location<select><option>Block 2 Lift Lobby</option><option>Pool Deck</option><option>Carpark</option></select></label>
+        <label>Issue<textarea>Ceiling light flickering near lift.</textarea></label>
+        <button id="submitTicket">Submit Issue</button>
+      </div>
+      <div class="box">
+        <h3>Ticket PV-2026-1042</h3>
+        <div class="progress"><div id="progressBar"></div></div>
+        <div class="steps"><span class="on">Reported</span><span id="s2">Assigned</span><span id="s3">In Progress</span><span id="s4">Resolved</span></div>
+        <p id="ticketText">No live ticket created yet.</p>
+        <button id="advanceTicket">Advance Demo Status</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="sla" class="panel">
+    <h2>Managing Agent Evaluation & SLA Financial Penalty</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Sample exceptions this month</h3>
+        <table><thead><tr><th>Event</th><th>Demerit</th><th>Clause</th></tr></thead><tbody>
+          <tr><td>Vendor late &gt;15 min</td><td>2</td><td>S$60</td></tr>
+          <tr><td>Overdue resident ticket</td><td>5</td><td>S$200</td></tr>
+          <tr><td>Missed patrol checkpoint</td><td>3</td><td>S$160</td></tr>
+        </tbody></table>
+      </div>
+      <div class="box">
+        <h3>Automated calculation</h3>
+        <div class="bigNumber">10 <small>demerit points</small></div>
+        <div class="bigNumber">S$420 <small>suggested SLA deduction</small></div>
+        <button id="recalc">Recalculate Compliance Score</button>
+        <div id="slaResult" class="result">Compliance score: 94%</div>
+        <p class="note">Production: penalty values come from the signed contract rules configured by MA. System suggests deductions; authorised staff approve before any billing action.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>Axon 1Pro Solutions · Concept MVP for MCST 581 Pandan Valley · Not production data</footer>
+<script src="app.js"></script>
+</body>
+</html>

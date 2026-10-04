@@ -727,3 +727,14 @@ A one-off build usually has a higher initial development cost and can be more ex
 
 **Custom one-off development is available by quotation: support@axon.com.sg**
 
+
+
+## Provider & API Integration Registry
+
+SEMS is designed as an open integration platform with support for AI/LLM, email, SMS, WhatsApp, voice, property systems, CCTV, access/LPR, identity, accounting, storage, monitoring and custom APIs.
+
+The current provider/key registry and security model are documented in:
+
+[PROVIDERS-INTEGRATIONS.md](PROVIDERS-INTEGRATIONS.md)
+
+Real provider secrets are never committed to GitHub and must remain server-side.

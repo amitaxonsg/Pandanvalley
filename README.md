@@ -453,3 +453,78 @@ SEMS is designed to support:
 - communication audit log
 
 Production consent and lawful-purpose rules must be confirmed by the client under Singapore PDPA and applicable estate policies.
+
+
+## Resident Mobile Camera / Photo Incident Reporting — Core Requirement
+
+The Resident PWA must provide a complete self-service flow, not only a text ticket form.
+
+Resident navigation should include:
+- Dashboard
+- Report an Issue
+- My Issues
+- Notices & Circulars
+- Announcements / Notifications
+- Contractor / Mover
+- My Unit / Profile
+- Communication Preferences
+- Install App
+- Help Centre
+
+### Report an Issue
+
+Residents must be able to:
+- choose issue category
+- enter short title
+- select/enter block and location
+- choose urgency
+- write description
+- **Take Photo** using the mobile camera where supported
+- **Upload Photo** from the device
+- preview the selected image/evidence
+- optionally use SEA-LION to suggest category
+- submit to MA
+- receive ticket number
+- immediately track the issue
+
+Recommended mobile input:
+`accept="image/*"` with camera capture enabled where supported by the browser/PWA.
+
+### Issue Tracking
+
+Residents can see:
+**Reported → Assigned → In Progress → Waiting Resident → Resolved**
+
+They may:
+- read MA public replies
+- add follow-up comment
+- attach another photograph
+- reopen an eligible resolved issue
+- receive notifications
+
+Residents must never see internal MA notes.
+
+### Notices / Circulars / Announcements
+
+Resident PWA must provide:
+- notice feed
+- monthly circular archive
+- announcements
+- emergency/maintenance banner
+- attachments
+- search/filter
+- Mark Read
+- Acknowledge
+- unread counters
+- notification history
+
+### Communication Preferences
+
+Resident can manage demo preferences for:
+- Email
+- SMS
+- WhatsApp
+- Voice
+- Emergency / essential service notifications
+
+These communication preferences and consent controls should be carried into the production architecture subject to the client's PDPA and estate-policy requirements.

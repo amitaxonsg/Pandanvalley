@@ -439,3 +439,60 @@ A one-off build usually has a higher initial development cost and can be more ex
 
 **Custom one-off development is available by quotation: support@axon.com.sg**
 
+
+
+## What SEMS Supports — Open Integration Ecosystem
+
+**Open platform. Your providers. Your integrations.**
+
+SEMS is not a closed ecosystem. It is designed to work with existing property systems, AI providers, email/SMS/WhatsApp providers, CCTV, access control, finance tools, storage platforms and custom APIs.
+
+If your provider is not listed, Axon can assess and build a connector.
+
+### AI / LLM
+SEA-LION — AI Singapore, OpenAI, Anthropic Claude, Google Gemini, Microsoft Azure OpenAI / Copilot Studio, Kimi, Mistral, Cohere, Groq, OpenRouter, local/self-hosted LLMs and custom OpenAI-compatible APIs.
+
+### Property / Condo
+Homeplus, iCondo, BuildingLink, Axon Resident Master, Excel/CSV, Google Sheets and custom property APIs.
+
+### Communications
+Email: Mailtrap/Axon SMTP, SMTP2GO, SendGrid, Mailgun, Amazon SES, Brevo, Mailchimp, Postmark, Microsoft 365 / Exchange, Gmail / Google Workspace.
+
+SMS: Twilio, Bird/MessageBird, Vonage, Sinch, Infobip.
+
+WhatsApp: Meta WhatsApp Business Cloud API, Twilio WhatsApp, Bird/MessageBird, Vonage, Infobip, 360dialog.
+
+Voice / AI Voice: ElevenLabs, Twilio Voice, Azure Speech, Google Cloud Text-to-Speech, Amazon Polly.
+
+### CCTV / Video
+Hikvision, Dahua, Axis, Hanwha Vision, Bosch, Milestone XProtect, Genetec, Avigilon, Uniview and custom ONVIF/VMS APIs.
+
+### Gate / Access / LPR
+Homeplus LPR, Hikvision, Dahua, Suprema, ZKTeco, HID, Gallagher, Genetec, Axis and custom access APIs.
+
+### Facial / Identity
+Axon Selfie Verification, Suprema, ZKTeco, HID, Azure Face, Amazon Rekognition and custom identity APIs.
+
+**Biometric / PDPA Review Required** for production use.
+
+### Finance / Accounting
+Xero, QuickBooks, Microsoft Dynamics 365, Sage, Excel/CSV and custom accounting APIs.
+
+### Storage / Cloud / Monitoring
+Dedicated VPS, Amazon S3, Cloudflare R2, Azure Blob Storage, Google Cloud Storage, SFTP, Cloudflare, Sentry and uptime monitoring.
+
+### Developer / Platform Tooling
+GitHub, GitHub Actions, GitHub Copilot (developer tooling only), Lovable and Supabase.
+
+### Bring Your Own Provider
+Already using Homeplus, iCondo, Hikvision, Mailchimp, Twilio, WhatsApp Business, ElevenLabs, Xero or another provider? Keep it.
+
+SEMS can connect through REST API, OpenAI-compatible API, OAuth/OIDC, SMTP, webhook, SFTP, CSV/Excel or custom middleware.
+
+### Provider Not Listed?
+Email **support@axon.com.sg** for integration assessment.
+
+### Third-Party Charges
+Provider subscriptions, API usage, message charges and vendor fees are normally paid directly by the client unless explicitly included in an Axon quotation.
+
+Custom connector development may be separately quoted.

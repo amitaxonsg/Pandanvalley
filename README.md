@@ -58,3 +58,32 @@ Demo email workflows use **Axon SMTP API (Mailtrap)** with verified sender domai
 ## Important
 
 All demo data is fictional. No real resident, biometric, access or confidential operational data should be loaded into the POC until production privacy, PDPA, retention, security and integration architecture are formally approved.
+
+
+## Demo Readiness Status — 5 Oct 2026
+
+The full-stack demo is ready for client demonstration at:
+
+**https://sems.axon.com.sg/**
+
+### Verified
+- All five demo roles and their pages load successfully.
+- SEA-LION / AI Singapore server-side integration has returned a real AI management summary.
+- Mailtrap / Axon SMTP server-side integration has successfully sent a test email from the verified axon.com.sg sender setup.
+- Secrets remain server-side and are not committed to GitHub.
+- Supabase/PostgreSQL stores the fictional demo records.
+- Demo Data supports JSON export/reset-to-seed.
+- Contextual Help and guided-tour flows are included.
+- Homeplus and other external providers are accurately marked Pending / API Required rather than presented as live integrations.
+- Full non-secret source/config/database setup is mirrored under the `fullstack-v2` branch/folder.
+
+### Intentionally pending before production
+- Real authenticated user accounts and server-side RBAC
+- Homeplus API assessment/integration
+- Live gate/LPR/CCTV provider integrations
+- Facial/biometric PDPA approval
+- Exact security demerit/SLA contract wording
+- Production SEA-LION deployment/entitlement
+- Final module/hardware/AI pricing
+
+These pending items do not block the sales / process-discovery demo.

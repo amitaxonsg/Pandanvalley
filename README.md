@@ -315,3 +315,24 @@ MA internal notes remain private.
 The resident interface is designed as an installable **Progressive Web App (PWA)** for supported iOS, Android and desktop browsers. Native App Store / Google Play packaging can be quoted separately if required.
 
 A playable Resident PWA concept is included in the GitHub Pages MVP while the full-stack database version is being implemented.
+
+
+## Product Overview
+
+A full description of what **Axon 1Pro Smart Estate Management System v2.0 (SEMS)** does, its integration-first strategy, Resident PWA, SEA-LION AI positioning and dedicated client deployment model is maintained in:
+
+[PRODUCT-OVERVIEW.md](PRODUCT-OVERVIEW.md)
+
+### Recommended client portal model
+
+Production deployments can use a dedicated client portal such as:
+
+`sems.<clientdomain.com>`
+
+with a dedicated application/VPS, database, storage, backup and audit environment where selected.
+
+This supports client isolation and governance, but does **not** by itself guarantee Singapore PDPA compliance. Production requires a complete privacy/security review covering access, consent, retention, backups, incidents, contracts, authentication and other applicable controls.
+
+### AI provider
+
+Current POC/development AI is powered by **SEA-LION — AI Singapore**, with server-side credentials and human approval for sensitive actions.

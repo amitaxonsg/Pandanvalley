@@ -336,3 +336,120 @@ This supports client isolation and governance, but does **not** by itself guaran
 ### AI provider
 
 Current POC/development AI is powered by **SEA-LION — AI Singapore**, with server-side credentials and human approval for sensitive actions.
+
+
+## Resident Communications & Campaigns
+
+SEMS includes a Resident Communications & Campaigns layer for MA/Admin teams.
+
+Supported communication use cases:
+- Notices
+- Monthly Circulars
+- Announcements
+- Maintenance Advisories
+- Emergency Notices
+- Events / AGM / Council messages
+- Contractor Works
+- Surveys / Feedback Requests
+- Optional Marketing / Promotion where permitted by estate policy and resident communication preferences
+
+Possible channels:
+- Resident PWA / portal notifications
+- Email
+- SMS
+- WhatsApp Business
+- Optional Voice / AI Voice
+
+Campaign workflow:
+**Draft → Preview → Test Send → Approval → Schedule/Send → Delivery Tracking → Analytics**
+
+Mass communications should require authorised human approval before sending.
+
+### Email providers
+
+Examples:
+- Axon SMTP / Mailtrap
+- SendGrid
+- Mailgun
+- Amazon SES
+- Brevo
+- Mailchimp
+- Custom SMTP
+- Custom API
+
+Mailtrap is currently used for the Pandan Valley demo's live email tests.
+
+### SMS
+
+SMS is an optional third-party subscription / usage-based service.
+
+Example providers:
+- Twilio
+- Bird / MessageBird
+- Vonage
+- Custom SMS API
+
+**SMS Gateway Subscription Required — usage charges apply.**
+
+### WhatsApp
+
+Possible WhatsApp Business/API providers:
+- Meta WhatsApp Business Cloud API
+- Twilio WhatsApp
+- Bird / MessageBird
+- Vonage
+- Custom BSP/API
+
+WhatsApp template approval, provider subscription and message charges are paid directly by the client unless otherwise agreed.
+
+### Voice / AI Voice
+
+Optional providers:
+- ElevenLabs
+- Twilio Voice
+- Custom Voice API
+
+ElevenLabs is treated as a voice/TTS/voice-agent provider, not as an email or SMS provider.
+
+Possible use cases:
+- emergency voice notice
+- outbound reminder
+- multilingual spoken circular
+- IVR
+- automated resident call
+
+## Open Integration / Bring-Your-Own-Provider
+
+**SEMS is an open integration platform — not a closed ecosystem.**
+
+Third-party services can be connected through:
+- API
+- OAuth
+- SMTP
+- webhook
+- CSV / Excel
+- scheduled import
+- custom connector
+
+Providers listed in SEMS are examples, not an exclusive list.
+
+If the client's preferred provider is not listed, contact:
+
+**support@axon.com.sg**
+
+for integration assessment.
+
+Third-party subscriptions, API fees and usage charges are normally paid directly by the client unless explicitly included in an Axon quotation. Custom API/connector development may be separately quoted.
+
+## Communication Preferences / PDPA Controls
+
+SEMS is designed to support:
+- Email preference
+- SMS preference
+- WhatsApp preference
+- Voice-call preference
+- Essential service / emergency notice distinction
+- preference update / unsubscribe
+- communication audit log
+
+Production consent and lawful-purpose rules must be confirmed by the client under Singapore PDPA and applicable estate policies.

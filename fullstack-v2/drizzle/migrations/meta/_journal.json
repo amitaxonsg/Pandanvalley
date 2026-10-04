@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791151664296,
+      "tag": "0000_estate_schema_and_seed",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791154646698,
+      "tag": "0001_addon_modules",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791155679383,
+      "tag": "0002_seed_deploy",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791156029010,
+      "tag": "0003_campaigns_module",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791156647485,
+      "tag": "0004_seed_whatsapp",
+      "breakpoints": true
+    }
+  ]
+}

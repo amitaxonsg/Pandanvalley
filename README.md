@@ -528,3 +528,119 @@ Resident can manage demo preferences for:
 - Emergency / essential service notifications
 
 These communication preferences and consent controls should be carried into the production architecture subject to the client's PDPA and estate-policy requirements.
+
+
+## Product Direction — From Pandan Valley Pilot to Standard SEMS Platform
+
+Axon 1Pro Smart Estate Management System v2.0 (SEMS) is being developed as a **standard product for condominiums, MCSTs and property-management teams**, not as a one-off custom system for Pandan Valley.
+
+### Pandan Valley's role
+
+Pandan Valley is currently treated as the **development-partner / pilot deployment** for SEMS.
+
+The objective of the Pandan Valley pilot is to:
+
+- validate the actual estate-management workflows
+- test the resident, MA/Admin, Security, Vendor and Council experiences
+- refine the resident PWA / issue-reporting process
+- validate notices, circulars and communication workflows
+- test work-order, attendance, patrol and SLA processes
+- validate SEA-LION AI assistance in practical estate-management use cases
+- validate Axon SMTP / Mailtrap communication workflows
+- identify integration needs with existing systems such as Homeplus
+- identify where Excel/manual processes can be automated
+- validate dedicated client deployment and data-isolation requirements
+- identify hardware, API and third-party provider dependencies
+- refine pricing, support and deployment models
+
+The work done with Pandan Valley is therefore part of **productisation and platform validation**, not merely bespoke development.
+
+### Standard product model
+
+Once the pilot workflows are validated, SEMS is intended to be deployable for other condominiums and MCSTs using a common platform architecture.
+
+Each client can have:
+
+- its own branded portal
+- a hostname such as `sems.<clientdomain.com>`
+- dedicated or isolated application/database infrastructure
+- its own residents, units and operational data
+- its own integrations
+- its own communication providers
+- its own policies, SLA rules and automation
+- its own backup, monitoring and retention configuration
+
+The software platform remains standard, while each estate receives its own configuration and data environment.
+
+### Why this matters
+
+The goal is to avoid creating a different codebase for every condominium.
+
+Instead, SEMS should provide:
+
+**One maintainable platform + configurable modules + client-specific integrations + isolated client data.**
+
+This approach makes it easier to:
+
+- keep the platform updated
+- improve security centrally
+- support new APIs/providers
+- improve SEA-LION AI features
+- add new communication channels
+- maintain PWA/mobile compatibility
+- improve reporting and automation
+- deploy improvements across all SEMS clients without rebuilding each estate's system from scratch
+
+### Subscription rather than one-off software ownership
+
+SEMS is designed as a subscription platform because AI, APIs, browser/mobile standards, security requirements and third-party services evolve continuously.
+
+A one-off custom system can become obsolete and expensive to maintain.
+
+The SEMS subscription model allows Axon to continuously maintain and improve the common platform while keeping each client's data environment separate.
+
+### Pandan Valley special development-partner arrangement
+
+Because Pandan Valley is helping Axon validate and refine the platform during this productisation stage, Axon may offer a special development-partner commercial arrangement.
+
+This arrangement is separate from the future standard SEMS pricing and remains subject to:
+
+- agreed pilot scope
+- council approval
+- formal quotation
+- infrastructure requirements
+- confirmed integration requirements
+- third-party provider/API costs
+
+Pandan Valley's participation does not mean its operational data is shared with other SEMS clients.
+
+Each production client environment is intended to remain logically and/or physically separated according to the agreed deployment architecture.
+
+### Long-term SEMS roadmap
+
+The platform is intended to evolve into a reusable estate-management ecosystem covering:
+
+- Resident Master & Unit Directory
+- Resident PWA / mobile experience
+- Incident reporting with photo evidence
+- Tickets and escalation
+- Notices, circulars and announcements
+- Email / SMS / WhatsApp / voice communications
+- Vendor attendance
+- Work orders and evidence
+- Contractor / mover access workflows
+- NFC / GPS route verification
+- MA task management
+- automation and Excel-to-workflow migration
+- SLA / demerit management
+- management / council reporting
+- SEA-LION AI assistance
+- open third-party API integrations
+- dedicated client deployment and security controls
+
+### Current status
+
+**Pandan Valley = Pilot / Development Partner / Product Validation**
+
+**SEMS = Standard Product Platform for Future Condominium / MCST Deployments**
+

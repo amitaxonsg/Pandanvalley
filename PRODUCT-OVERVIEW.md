@@ -305,3 +305,60 @@ Client portal:
 https://sems.axon.com.sg/
 
 The current demonstration uses fictional data and is intended for requirements validation, process mapping and commercial scoping before production deployment.
+
+
+## Resident Communications & Campaigns
+
+SEMS can manage estate communications from one MA/Admin workspace while still using the client's preferred delivery providers.
+
+Channels:
+- PWA / portal notifications
+- Email
+- SMS
+- WhatsApp Business
+- Voice / AI Voice
+
+Campaign types:
+- notices
+- circulars
+- announcements
+- maintenance advisories
+- emergency notices
+- event / AGM / council
+- contractor works
+- surveys / feedback
+- optional marketing/promotional messages where permitted
+
+Audience targeting:
+- all residents
+- owners
+- tenants
+- occupants
+- selected blocks
+- selected units
+- custom segments
+- channel opt-in segments
+
+### Example providers
+
+Email:
+Mailtrap, SendGrid, Mailgun, Amazon SES, Brevo, Mailchimp, Custom SMTP/API
+
+SMS:
+Twilio, Bird/MessageBird, Vonage, Custom API
+
+WhatsApp:
+Meta WhatsApp Business Cloud API, Twilio WhatsApp, Bird/MessageBird, Vonage, Custom BSP/API
+
+Voice / AI Voice:
+ElevenLabs, Twilio Voice, Custom Voice API
+
+### Open Integration Policy
+
+SEMS is not a closed platform.
+
+If a provider has a suitable API, SMTP endpoint, webhook, OAuth integration or file-based interface, Axon can assess it for connection.
+
+**Need another provider? Email support@axon.com.sg for integration assessment.**
+
+Third-party subscriptions and usage charges are client-paid direct unless explicitly included in an Axon quotation.

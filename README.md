@@ -1,38 +1,60 @@
-# Pandan Valley Smart Estate Management — MVP Demo
-Pages deployment trigger
-Concept prototype prepared by Axon 1Pro Solutions for MCST 581 Pandan Valley Condominium.
+# Axon 1Pro Smart Estate Management System v2.0 — Pandan Valley
 
-## Scope covered
-1. Service Vendor Work Reporting
-2. Digital Work Reporting with before/after verification
-3. Contractor / Mover Registration and Digital QR Pass
-4. Routine Works, NFC Checkpoints and Patrol Route Verification
-5. Resident Feedback with Live Ticket Status
-6. Managing Agent Evaluation and SLA Financial Penalty Calculator
+**Client:** MCST 581 Pandan Valley Condominium  
+**Product:** Axon 1Pro Smart Estate Management System v2.0  
+**Company:** Axon 1Pro Solutions  
+**Website:** axon.com.sg  
+**Support:** support@axon.com.sg
 
-## How to run
-Open `index.html` in any modern browser. No backend is required for this concept demo.
+## Live Full-Stack Demo
+
+**Actual demo:** http://sems.axon.com.sg/
+
+The GitHub Pages content in this repository is the client-facing concept / blueprint / quotation layer. The actual interactive full-stack demo runs separately on the application runtime and database environment, exposed through the Axon demo domain above.
+
+### Platform separation
+
+- **GitHub / GitHub Pages:** proposal, blueprint, discovery form, module quotation pages, source/version control and the static concept MVP.
+- **Lovable + Supabase:** full-stack runtime, persistent demo database, role-based workflows, server-side SEA-LION AI calls, and server-side Mailtrap/Axon SMTP actions.
+- **sems.axon.com.sg:** client-facing entry point for the playable full-stack demo.
+
+## Full-Stack v2 Source
+
+A protected source mirror is maintained on the `fullstack-v2` branch / folder. Secrets are never committed to GitHub.
+
+Server secrets:
+- `SEA_LION_API_KEY`
+- `MAILTRAP`
+
+## Demo Roles
+
+- MA / Admin
+- Security
+- Vendor
+- Resident
+- Council
+
+## Core Modules
+
+1. Vendor Attendance & Geo-Fenced Accountability
+2. Digital Work Orders & Before/After Evidence
+3. Contractor / Mover Registration & QR Gate Access
+4. NFC + GPS Patrol / Cleaning / Landscape Verification
+5. Resident Feedback & Issue Resolution Tracking
+6. MA Evaluation, Demerit & SLA Recommendation
+7. Integrations / API Settings
+8. SEA-LION AI Settings
+9. Axon SMTP / Mailtrap Email Settings
+10. Demo Data / JSON Export / Reset
+
+## AI
+
+AI assistance is designed around **SEA-LION — AI Singapore** for development/POC use. The current trial API is limited to 10 requests per minute and is not a production/commercial entitlement. Production use requires an approved production deployment arrangement.
+
+## Email
+
+Demo email workflows use **Axon SMTP API (Mailtrap)** with verified sender domain `axon.com.sg` and default sender `amit@axon.com.sg`. Secrets stay server-side.
 
 ## Important
-This is an interactive front-end MVP using demo data. GPS/geofencing, facial recognition, NFC hardware reads, SMS/email delivery, QR validation, secure photo metadata, resident authentication and SLA billing integrations are simulated in this version.
 
-## Production architecture
-- Web/PWA frontend for MA, security, vendors and residents
-- Secure API/backend with role-based access
-- SQL database and audit log
-- Object storage for work photos
-- GPS/geofence service
-- Device camera capture + metadata/hash validation
-- NFC tag checkpoint validation
-- Signed/expiring QR passes
-- Email/SMS notification provider
-- Configurable SLA/de-merit rules engine
-- Reporting/export dashboard
-
-## Recommended delivery phases
-**Phase 1:** Vendor attendance, work reports, resident tickets, admin dashboard  
-**Phase 2:** Contractor QR passes, guard workflow, photo verification  
-**Phase 3:** NFC patrols, geofence automation, stronger identity verification  
-**Phase 4:** SLA penalty engine, analytics, integrations, production hardening
-
-No production biometric data should be enabled until privacy, consent, retention, security and Singapore PDPA requirements are reviewed and approved.
+All demo data is fictional. No real resident, biometric, access or confidential operational data should be loaded into the POC until production privacy, PDPA, retention, security and integration architecture are formally approved.

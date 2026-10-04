@@ -644,3 +644,80 @@ The platform is intended to evolve into a reusable estate-management ecosystem c
 
 **SEMS = Standard Product Platform for Future Condominium / MCST Deployments**
 
+
+
+## Why Axon Recommends Subscription Instead of One-Off Development
+
+Axon does not generally recommend deploying a modern automation platform like SEMS as a one-off custom application with no ongoing maintenance or subscription arrangement.
+
+The reason is practical: systems like SEMS depend on components that continue to change after launch, including:
+
+- third-party APIs
+- AI models and providers
+- browsers and PWA/mobile standards
+- email, SMS, WhatsApp and voice providers
+- security libraries and operating-system dependencies
+- database engines and application frameworks
+- data-protection/security expectations
+- integration endpoints
+- infrastructure, backups and monitoring
+- estate-management workflows and client requirements
+
+A one-off system can work well at launch but may become outdated, incompatible or expensive to maintain after a few years if nobody is continuously responsible for keeping it current.
+
+### Recommended SEMS Subscription Model
+
+The SEMS subscription model is intended to keep the platform:
+
+- maintained
+- supported
+- patched
+- compatible
+- continuously improved
+
+The subscription supports ongoing:
+
+- code maintenance
+- security updates
+- API/integration updates
+- SEA-LION/AI integration updates
+- PWA/browser compatibility updates
+- database/infrastructure maintenance
+- monitoring and backup improvements
+- workflow enhancements
+- common platform improvements that can benefit all SEMS clients
+
+**Subscribe so the platform stays current, supported and maintainable.**
+
+## One-Off Customized Development Option
+
+Subscription is Axon's recommended model, but it is **not mandatory**.
+
+Organizations that prefer to own and maintain a separate custom application can request a one-off customized SEMS-derived solution.
+
+A one-off build can be quoted separately and may include, subject to contract:
+
+- custom scope and architecture
+- source-code handover
+- deployment handover
+- client-managed or Axon-managed hosting
+- documentation
+- agreed transition to the client's own IT team, webmaster or software developer
+
+After handover, future work such as:
+
+- API changes
+- security patches
+- AI/provider changes
+- browser/mobile compatibility
+- dependency upgrades
+- infrastructure maintenance
+- bug fixes
+- new features
+
+becomes the client's responsibility unless Axon is retained under a separate support/maintenance agreement.
+
+A one-off build usually has a higher initial development cost and can be more expensive to maintain over time.
+
+**Custom one-off development is available by quotation: support@axon.com.sg**
+

@@ -1,5 +1,5 @@
 # Pandan Valley Smart Estate Management — MVP Demo
-
+Pages deployment trigger
 Concept prototype prepared by Axon 1Pro Solutions for MCST 581 Pandan Valley Condominium.
 
 ## Scope covered

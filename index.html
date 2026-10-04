@@ -35,6 +35,60 @@
     <a href="discovery.html" style="background:#0f6d61;color:#fff;text-decoration:none;padding:12px 16px;border-radius:10px;font-weight:700">Open Discovery Form →</a>
   </div>
 </section>
+<section class="experience card">
+  <div class="experience-head">
+    <div><h2>Experience the system by role</h2><p>Select a role to see how one connected platform can present different information to different users.</p></div>
+    <div class="role-switcher" id="roleSwitcher">
+      <button class="rolebtn active" data-role="MA/Admin">MA / Admin</button>
+      <button class="rolebtn" data-role="Resident">Resident</button>
+      <button class="rolebtn" data-role="Security">Security</button>
+      <button class="rolebtn" data-role="Vendor">Vendor</button>
+      <button class="rolebtn" data-role="Council">Council</button>
+    </div>
+  </div>
+  <div class="role-view">
+    <span class="role-badge">Viewing as <b id="activeRole">MA / Admin</b></span>
+    <h3 id="roleTitle">Operations control centre</h3>
+    <p id="roleText">See vendor attendance, resident issues, patrol exceptions, contractor approvals, SLA exposure and management reports in one place.</p>
+  </div>
+</section>
+
+<section class="ops-grid">
+  <div class="card activity-card">
+    <div class="section-title"><div><span class="mini-label">LIVE DEMO</span><h2>Today at Pandan Valley</h2></div><span class="soft-pill">Connected activity feed</span></div>
+    <div id="activityFeed" class="activity-feed">
+      <div class="activity-item"><time>08:11</time><div><b>CleanPro worker CP-0184 arrived late</b><span>Attendance threshold exceeded · MA notified</span></div></div>
+      <div class="activity-item"><time>09:03</time><div><b>Contractor visit approved</b><span>ABC Movers · Unit #12-308 · QR pass issued</span></div></div>
+      <div class="activity-item"><time>10:16</time><div><b>Water seepage work completed</b><span>Before/after evidence received · Awaiting MA inspection</span></div></div>
+      <div class="activity-item"><time>11:42</time><div><b>Resident issue assigned</b><span>Block 2 Lift Lobby · Estate Maintenance</span></div></div>
+      <div class="activity-item"><time>14:05</time><div><b>Patrol exception detected</b><span>Block 4 Carpark checkpoint not yet verified</span></div></div>
+    </div>
+  </div>
+
+  <button class="alert-card" id="slaAlert" type="button">
+    <span class="alert-kicker">ACTION REQUIRED</span>
+    <strong>Resident ticket nearing SLA</strong>
+    <span>PV-2026-1042 · 42 minutes remaining</span>
+    <small>Click to review recommended action →</small>
+  </button>
+</section>
+
+<div class="alert-modal" id="alertModal" aria-hidden="true">
+  <div class="alert-dialog">
+    <button class="modal-close" id="closeAlert" aria-label="Close">×</button>
+    <span class="alert-kicker">SLA ALERT</span>
+    <h2>Ticket PV-2026-1042</h2>
+    <div class="alert-details">
+      <div><span>Location</span><b>Block 2 Lift Lobby</b></div>
+      <div><span>Issue</span><b>Ceiling light flickering</b></div>
+      <div><span>Assigned to</span><b>Estate Maintenance</b></div>
+      <div><span>SLA remaining</span><b class="danger-text">42 minutes</b></div>
+    </div>
+    <div class="aiuse"><b>AI-assisted recommendation</b><span>Escalate to the maintenance supervisor now and confirm technician ETA. If no acknowledgement is received within 15 minutes, notify the Property Officer.</span></div>
+    <button id="simulateEscalation">Simulate Escalation</button>
+    <div id="alertResult" class="result subtle">No action taken yet.</div>
+  </div>
+</div>
 <section class="kpis">
   <div class="card"><span>Vendors on-site</span><strong id="vendorsOnSite">7</strong><small>1 late arrival · 2 jobs in progress</small></div>
   <div class="card"><span>Open resident issues</span><strong>12</strong><small>3 nearing SLA · 1 overdue</small></div>
@@ -76,6 +130,7 @@
       <div class="recommend"><b>Axon recommendation</b><span>Use geofencing first. Keep facial recognition optional and subject to privacy, consent and PDPA review.</span></div>
       <div class="aiuse"><b>AI usage</b><span>AI can identify attendance anomalies, repeated late patterns and unusual check-in behaviour for management review.</span></div>
     </div>
+  <div class="nextstepbox"><b>What happens next?</b><span>The worker remains monitored against the estate geofence. If the device leaves the approved boundary, the system records auto-check-out and updates the MA dashboard.</span></div>
   </div>
 </section>
 
@@ -103,6 +158,7 @@
       <div class="recommend"><b>Axon recommendation</b><span>Force camera capture for critical jobs instead of gallery upload. Store timestamp, GPS, device ID and a file hash for audit trail.</span></div>
       <div class="aiuse"><b>AI usage</b><span>AI can compare before/after images, flag poor completion quality, detect missing evidence and summarize contractor performance.</span></div>
     </div>
+  <div class="nextstepbox"><b>What happens next?</b><span>The completed report goes to the MA for inspection. Once approved, the job closes and its evidence becomes part of the vendor performance record.</span></div>
   </div>
 </section>
 
@@ -125,6 +181,7 @@
       <div class="recommend left"><b>Axon recommendation</b><span>Use expiring signed QR passes. Gate staff should see company, unit, vehicle, valid time window and approval status.</span></div>
       <div class="aiuse left"><b>AI usage</b><span>AI can detect suspicious repeat visits, unusual access times and contractor patterns that deserve review.</span></div>
     </div>
+  <div class="nextstepbox"><b>What happens next?</b><span>Security scans the temporary pass at the gate. The system checks validity, records entry, and shows the approved resident/unit/vehicle details.</span></div>
   </div>
 </section>
 
@@ -153,6 +210,7 @@
       <div class="recommend"><b>Axon recommendation</b><span>Use low-cost NFC tags at key points for security, cleaning and landscape routes. Combine with timing thresholds, not only GPS.</span></div>
       <div class="aiuse"><b>AI usage</b><span>AI can detect rushed patrols, impossible route timings, recurring skipped zones and recommend route adjustments.</span></div>
     </div>
+  <div class="nextstepbox"><b>What happens next?</b><span>The completed checkpoint updates the route to compliant. Any missing or unusually fast route remains visible as an exception for supervisor review.</span></div>
   </div>
 </section>
 
@@ -175,6 +233,7 @@
       <div class="recommend"><b>Axon recommendation</b><span>Place QR codes at common facilities and blocks. Let residents track status without logging in for low-risk issues, using a secure ticket token.</span></div>
       <div class="aiuse"><b>AI usage</b><span>AI can classify complaints, detect duplicates, summarize long resident messages, route tickets and suggest priority based on impact.</span></div>
     </div>
+  <div class="nextstepbox"><b>What happens next?</b><span>The resident receives a secure tracking link while the MA team sees SLA countdown, ownership and escalation status until resolution.</span></div>
   </div>
 </section>
 
@@ -199,9 +258,32 @@
       <div class="recommend"><b>Axon recommendation</b><span>Keep financial deductions as recommendations only. Final approval should remain with authorised management personnel.</span></div>
       <div class="aiuse"><b>AI usage</b><span>AI can explain why a score changed, forecast vendor risk and generate monthly council-ready performance summaries.</span></div>
     </div>
+  <div class="nextstepbox"><b>What happens next?</b><span>The suggested demerit and financial impact are routed to an authorised MA user for review. Nothing financial is actioned automatically in the recommended design.</span></div>
   </div>
 </section>
 
+<section class="management-report card">
+  <div class="section-title">
+    <div><span class="mini-label">MANAGEMENT VIEW</span><h2>October 2026 Management Summary</h2></div>
+    <span class="soft-pill">Demo report</span>
+  </div>
+  <div class="report-grid">
+    <div><span>Vendor attendance</span><strong>96%</strong><small>3 late arrivals this month</small></div>
+    <div><span>Jobs within SLA</span><strong>91%</strong><small>41 of 45 completed on time</small></div>
+    <div><span>Resident tickets resolved</span><strong>84</strong><small>Average resolution 5h 22m</small></div>
+    <div><span>Patrol compliance</span><strong>97%</strong><small>2 exceptions under review</small></div>
+    <div><span>Open high-priority issues</span><strong>3</strong><small>1 nearing SLA</small></div>
+    <div><span>Suggested SLA deductions</span><strong>S$420</strong><small>Pending authorised review</small></div>
+  </div>
+  <div class="report-actions">
+    <button id="generateAiSummary">Generate AI Management Summary</button>
+    <span>Demonstrates how AI can turn operational data into a short council-ready narrative.</span>
+  </div>
+  <div id="aiSummary" class="ai-summary">
+    <b>AI summary not generated yet.</b>
+    <p>Click the button to create a demo management narrative from the sample operational data.</p>
+  </div>
+</section>
 <section class="strategy card">
   <h2>Axon Proposed Smart Estate Architecture</h2>
   <div class="strategygrid">

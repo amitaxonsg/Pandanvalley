@@ -71,7 +71,23 @@ The backend should return:
 For the sales MVP, send demo/sample data only. Do not send real resident names, NRICs, biometric images, phone numbers, access records or confidential contract data to an external AI service until Pandan Valley approves the production privacy architecture.
 
 ## Trial-key limitation
-The current SEA-LION key shown in the provider portal is a trial key, rate-limited to 10 requests per minute and marked by the provider as not for production or commercial use. Keep the public Pandan Valley sales MVP in simulation mode until a production/commercial SEA-LION key or approved plan is available.
+SEA-LION provides a free API for prototype/POC development. The current trial API is rate-limited to 10 requests per minute per user and should not be used for production or commercial purposes. Production deployment should use an approved production/cloud deployment arrangement. Keep the public Pandan Valley sales MVP in simulation mode until a production/commercial SEA-LION key or approved plan is available.
 
 ## Current behaviour
 Until a secure backend URL is configured, the MVP clearly displays **AI Simulation Mode** and uses realistic sample AI responses. This avoids exposing credentials while still demonstrating the workflow.
+
+
+## SEA-LION provider information
+
+SEA-LION (Southeast Asian Languages in One Network) is an open-source LLM family anchored by AI Singapore and built for Southeast Asian languages, contexts and cultures.
+
+Development / POC:
+https://playground.sea-lion.ai/
+
+API documentation:
+https://docs.sea-lion.ai/guides/inferencing/api
+
+Public API endpoint:
+https://api.sea-lion.ai/v1/chat/completions
+
+The API is OpenAI-compatible for chat completion workflows.

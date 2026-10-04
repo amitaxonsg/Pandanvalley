@@ -1,52 +1,70 @@
-const modules=document.querySelectorAll('.module');const panels=document.querySelectorAll('.panel');modules.forEach(b=>b.onclick=()=>{modules.forEach(x=>x.classList.remove('active'));panels.forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.target).classList.add('active');window.scrollTo({top:document.querySelector('.modules').offsetTop-10,behavior:'smooth'})});
-document.getElementById('checkinBtn').onclick=()=>{document.getElementById('vendorTable').insertAdjacentHTML('beforeend','<tr><td>CP-0187</td><td>'+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})+'</td><td>CleanPro</td><td><span class="pill good">On site</span></td></tr>');document.getElementById('vendorsOnSite').textContent='8';document.getElementById('vendorToast').textContent='Check-in completed: GPS verified, identity verified, timestamp recorded. Auto-check-out monitoring started (simulated).'};
-document.getElementById('verifyPhotos').onclick=()=>{document.getElementById('photoResult').textContent='Verified: same work order, correct before/after sequence, matching location and device metadata. No duplicate image detected (demo).'};
-document.getElementById('issuePass').onclick=()=>{document.getElementById('passTitle').textContent='PASS PV-CT-8842 ACTIVE';document.getElementById('passInfo').textContent='ABC Movers · Unit #12-308 · Vehicle GBD 4821 K · Valid 06 Oct 2026 · 09:00–17:00';};
-document.getElementById('tapNfc').onclick=()=>{const p=document.getElementById('pendingPoint');p.classList.add('done');p.innerHTML='✓ Block 4 Carpark <small>'+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})+' NFC</small>';};
-let stage=0;document.getElementById('submitTicket').onclick=()=>{stage=1;document.getElementById('ticketText').textContent='Ticket created. Acknowledgement sent to resident and 8-hour SLA timer started.';document.getElementById('progressBar').style.width='25%';};
-document.getElementById('advanceTicket').onclick=()=>{if(stage===0)stage=1;else if(stage<4)stage++;const widths=['25%','50%','75%','100%'];document.getElementById('progressBar').style.width=widths[stage-1];['s2','s3','s4'].forEach((id,i)=>document.getElementById(id).classList.toggle('on',stage>=i+2));const txt={1:'Reported: acknowledgement sent to resident.',2:'Assigned to estate maintenance team. SLA clock continues.',3:'Technician attending location. Resident sees live status.',4:'Resolved. Resident notified and closure confirmation requested.'};document.getElementById('ticketText').textContent=txt[stage];};
-document.getElementById('recalc').onclick=()=>{document.getElementById('slaResult').textContent='Compliance score: 94% · 10 demerit points · Suggested deduction S$420 · Final approval required by authorised MA user.';};
-const roleContent={
-  'MA/Admin':['Operations control centre','See vendor attendance, resident issues, patrol exceptions, contractor approvals, SLA exposure and management reports in one place.'],
-  'Resident':['Resident self-service view','Report an issue, register a contractor or mover, and follow service progress without repeatedly calling the management office.'],
-  'Security':['Security operations view','Validate contractor passes, see authorised vehicle and unit details, complete patrol checkpoints and respond to access exceptions.'],
-  'Vendor':['Vendor mobile work view','Check in, receive assigned jobs, capture before/after evidence, complete checklists and submit work for approval.'],
-  'Council':['Council oversight view','See high-level compliance, SLA trends, vendor performance, unresolved risks and monthly management summaries without operational clutter.']
-};
-document.querySelectorAll('.rolebtn').forEach(btn=>btn.addEventListener('click',()=>{
-  document.querySelectorAll('.rolebtn').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
-  const role=btn.dataset.role;document.getElementById('activeRole').textContent=role;
-  document.getElementById('roleTitle').textContent=roleContent[role][0];document.getElementById('roleText').textContent=roleContent[role][1];
-}));
+const modules=document.querySelectorAll('.module'),panels=document.querySelectorAll('.panel');
+modules.forEach(b=>b.onclick=()=>{modules.forEach(x=>x.classList.remove('active'));panels.forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.target).classList.add('active');window.scrollTo({top:document.querySelector('.modules').offsetTop-10,behavior:'smooth'})});
 
-function addActivity(title,detail){
-  const feed=document.getElementById('activityFeed');if(!feed)return;
-  const row=document.createElement('div');row.className='activity-item';
-  const t=new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
-  row.innerHTML='<time>'+t+'</time><div><b>'+title+'</b><span>'+detail+'</span></div>';
-  feed.prepend(row);
-}
-const oldCheck=document.getElementById('checkinBtn').onclick;
-document.getElementById('checkinBtn').onclick=()=>{oldCheck();addActivity('Vendor worker checked in','CP-0187 · CleanPro · GPS/identity verified (demo)')};
-const oldVerify=document.getElementById('verifyPhotos').onclick;
-document.getElementById('verifyPhotos').onclick=()=>{oldVerify();addActivity('Work evidence verified','Block 3 L2 water seepage · before/after pair accepted')};
-const oldPass=document.getElementById('issuePass').onclick;
-document.getElementById('issuePass').onclick=()=>{oldPass();addActivity('Temporary contractor pass issued','ABC Movers · Unit #12-308 · GBD 4821 K')};
-const oldNfc=document.getElementById('tapNfc').onclick;
-document.getElementById('tapNfc').onclick=()=>{oldNfc();addActivity('Patrol checkpoint verified','Block 4 Carpark · NFC checkpoint completed')};
-const oldSubmit=document.getElementById('submitTicket').onclick;
-document.getElementById('submitTicket').onclick=()=>{oldSubmit();addActivity('Resident issue created','PV-2026-1042 · Block 2 Lift Lobby · SLA timer started')};
+const roleContent={
+'MA/Admin':['Estate operations control centre','Monitor attendance, work orders, residents, contractor access, patrol exceptions, SLA exposure and management reports.'],
+'Security':['Gate and checkpoint operations','Record vendor attendance, scan contractor passes at 3 gates, verify access details and complete NFC/GPS checkpoints.'],
+'Vendor':['Mobile work and evidence','Check in, receive assigned work, capture before/after evidence, complete checklists and submit for MA sign-off.'],
+'Resident':['Resident service portal','Use authenticated access to report issues, register contractors/movers and follow MA replies and ticket progress.'],
+'Council':['Read-only oversight','Review monthly compliance, vendor performance, unresolved risks, evidence trends and management summaries without editing operations.']
+};
+document.querySelectorAll('.rolebtn').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.rolebtn').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const r=btn.dataset.role;document.getElementById('activeRole').textContent=r;document.getElementById('roleTitle').textContent=roleContent[r][0];document.getElementById('roleText').textContent=roleContent[r][1]});
+
+function addActivity(title,detail){const f=document.getElementById('activityFeed');const row=document.createElement('div');row.className='activity-item';row.innerHTML='<time>'+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+'</time><div><b>'+title+'</b><span>'+detail+'</span></div>';f.prepend(row)}
+
+document.getElementById('checkinBtn').onclick=()=>{document.getElementById('vendorTable').insertAdjacentHTML('beforeend','<tr><td>CP-0187</td><td>'+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+'</td><td>CleanPro</td><td><span class="pill good">On site</span></td></tr>');document.getElementById('vendorToast').textContent='Check-in complete: location, identity and timestamp recorded. 30-minute threshold rules active (demo).';addActivity('Vendor worker checked in','CP-0187 · CleanPro · security-assisted attendance recorded')};
+
+document.getElementById('verifyPhotos').onclick=()=>{document.getElementById('photoResult').textContent='Evidence verified (demo): correct job, sequence, location metadata and before/after pair present.';addActivity('Work evidence verified','WO-2026-451 · Pump Maintenance · ready for MA sign-off')};
+document.getElementById('approveJob').onclick=()=>{document.getElementById('jobApproval').textContent='Approved by MA officer (demo). Job closed and evidence archived for 3 years.';addActivity('MA signed off work order','WO-2026-451 · Pump Maintenance · approved')};
+document.getElementById('rectifyJob').onclick=()=>{document.getElementById('jobApproval').textContent='Rectification requested. Vendor notified to correct and resubmit evidence.';addActivity('Rectification requested','WO-2026-451 returned to vendor')};
+
+document.getElementById('issuePass').onclick=()=>{document.getElementById('passTitle').textContent='PASS PV-CT-8842 ACTIVE';document.getElementById('passInfo').textContent='ABC Movers · #12-308 · GBD 4821 K · Gate 2 · Multiple entry · Deposit received';addActivity('Contractor QR pass issued','ABC Movers · Gate 2 · multiple-entry validity')};
+
+document.getElementById('tapNfc').onclick=()=>{const p=document.getElementById('pendingPoint');p.classList.add('done');p.innerHTML='✓ Block 4 Carpark <small>'+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+' NFC + GPS</small>';addActivity('NFC checkpoint verified','Block 4 Carpark · Security Night A')};
+const routes={
+Security:'Security: current virtual patrol is CCTV-based; proposed NFC + GPS adds physical checkpoint verification where required.',
+Cleaning:'Cleaning: supervisor instructions become route/checklist tasks with block-by-block time stamps and physical checkpoint evidence.',
+Landscape:'Landscape: twice-monthly float-team work can be recorded by zone with attendance, photos, route points and completion evidence.'
+};
+document.querySelectorAll('.routebtn').forEach(b=>b.onclick=()=>{document.querySelectorAll('.routebtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('routeDesc').textContent=routes[b.dataset.route]});
+
+let stage=0;
+document.getElementById('submitTicket').onclick=()=>{stage=1;document.getElementById('ticketText').textContent='Ticket created. MA owns assignment and closure. Resident can track status and MA replies.';document.getElementById('progressBar').style.width='25%';addActivity('Resident issue created','Category: '+document.getElementById('ticketCategory').value+' · Block 2 Lift Lobby')};
+document.getElementById('advanceTicket').onclick=()=>{if(stage===0)stage=1;else if(stage<4)stage++;const widths=['25%','50%','75%','100%'];document.getElementById('progressBar').style.width=widths[stage-1];['s2','s3','s4'].forEach((id,i)=>document.getElementById(id).classList.toggle('on',stage>=i+2));const txt={1:'Reported: ticket acknowledged.',2:'Assigned: MA assigned responsible team/vendor.',3:'In Progress: work underway and SLA timer monitored.',4:'Resolved: MA closed case and resident sees final reply.'};document.getElementById('ticketText').textContent=txt[stage]};
+
+document.getElementById('recalc').onclick=()=>{document.getElementById('slaResult').textContent='Demo review: 32 running points. No deduction applied because exact 40-point / 10% trigger wording still requires confirmation.'};
 
 const modal=document.getElementById('alertModal');
 document.getElementById('slaAlert').onclick=()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false')};
 document.getElementById('closeAlert').onclick=()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')};
-modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}});
-document.getElementById('simulateEscalation').onclick=()=>{
-  document.getElementById('alertResult').textContent='Escalation simulated: Maintenance Supervisor notified and a 15-minute acknowledgement timer started.';
-  addActivity('SLA escalation triggered','PV-2026-1042 · Maintenance Supervisor notified (demo)');
-};
+modal.onclick=e=>{if(e.target===modal){modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}};
+document.getElementById('simulateEscalation').onclick=()=>{document.getElementById('alertResult').textContent='Escalation simulated: supervisor notified and acknowledgement timer started.';addActivity('SLA escalation triggered','PV-2026-1042 · supervisor notified')};
 
-document.getElementById('generateAiSummary').onclick=()=>{
-  document.getElementById('aiSummary').innerHTML='<b>AI-assisted management summary</b><p>Overall estate compliance remains strong at 94%. Vendor attendance is healthy at 96%, although three late arrivals should be reviewed with the affected contractor. Most work orders are being completed within SLA, but one resident issue is approaching its response threshold and should be escalated. Patrol compliance remains high at 97%, with two exceptions requiring supervisor review. The current rules indicate S$420 in potential SLA deductions; Axon recommends human review before any financial action.</p>';
-  addActivity('AI management summary generated','October operational data converted into a council-ready narrative (demo)');
+const aiEndpoint=(window.PV_AI_ENDPOINT||'').trim();
+if(aiEndpoint){document.getElementById('aiConnection').textContent='Secure AI backend configured';document.getElementById('aiModeLabel').textContent='Live AI backend configured'}
+
+async function callAI(task,payload){
+  if(!aiEndpoint)return null;
+  try{
+    const r=await fetch(aiEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({task,payload})});
+    if(!r.ok)throw new Error('AI request failed');
+    return await r.json();
+  }catch(e){return null}
+}
+document.getElementById('classifyTicket').onclick=async()=>{
+  const msg=document.getElementById('residentMessage').value;
+  const box=document.getElementById('classificationResult');
+  box.innerHTML='<b>Processing...</b><p>Checking complaint classification.</p>';
+  const live=await callAI('classify_ticket',{message:msg,categories:['Cleaning','Security','Pest Control','Light','Facilities','Landscape','Dispute','Safety','Others','Compliment']});
+  if(live&&live.text){box.innerHTML='<b>AI-assisted result</b><p>'+live.text+'</p>'}
+  else{box.innerHTML='<b>AI simulation result</b><p><b>Category:</b> Light · <b>Priority:</b> Normal · <b>Summary:</b> Resident reports recurring flickering ceiling light near Block 2 lift since yesterday evening. <b>Suggested action:</b> Assign estate maintenance and monitor response SLA.</p>'}
+};
+document.getElementById('generateAiSummary').onclick=async()=>{
+  const box=document.getElementById('aiSummary');
+  box.innerHTML='<b>Processing...</b><p>Generating management narrative.</p>';
+  const data={vendorAttendance:'96%',jobsWithEvidence:'93%',ticketsResolved:84,avgResolution:'5h 22m',checkpointCompliance:'97%',highPriority:3,evidenceRetention:'3 years'};
+  const live=await callAI('management_summary',data);
+  if(live&&live.text){box.innerHTML='<b>AI-assisted management summary</b><p>'+live.text+'</p>'}
+  else{box.innerHTML='<b>AI simulation summary</b><p>Overall estate accountability is strong. Vendor attendance is 96%, while 93% of sampled jobs contain the required evidence. Resident service volume remains manageable with 84 tickets resolved at an average of 5 hours 22 minutes. Checkpoint compliance is 97%, although three high-priority issues require management attention. Axon recommends focusing on evidence completeness, unresolved SLA items and finalising the security demerit rule before financial automation is enabled.</p>'}
+  addActivity('Management summary generated','Operational data converted into council-ready narrative (demo)');
 };

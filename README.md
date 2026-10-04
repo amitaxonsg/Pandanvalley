@@ -87,3 +87,200 @@ The full-stack demo is ready for client demonstration at:
 - Final module/hardware/AI pricing
 
 These pending items do not block the sales / process-discovery demo.
+
+
+## Product Strategy — Add-On, Integrate First
+
+Axon 1Pro Smart Estate Management System v2.0 is positioned as a **smart operations, automation and accountability layer**, not as a forced replacement for the estate's existing specialist systems.
+
+For Pandan Valley, Homeplus and existing tools can remain in place for functions they already perform well, such as facility booking, visitor/access workflows, LPR/gate management, resident-facing functions, payments and other estate services. Axon connects around those systems through API, scheduled import, CSV/Excel import or controlled parallel workflows where required.
+
+### Principle
+
+**Integrate first. Replace only if there is a business reason.**
+
+Existing tools may include:
+- Homeplus
+- Facility booking platforms
+- Gate / LPR / access systems
+- CCTV
+- Email
+- Excel / Google Sheets
+- Tender Board
+- Accounting systems
+
+Axon adds:
+- Resident Master / Unit Directory where required
+- Work orders and evidence
+- Vendor accountability
+- Tasks and escalation
+- Automation rules
+- Resident issue tracking
+- Communications / circulars / notices
+- Mass email
+- SMS gateway integration
+- NFC / GPS route verification
+- SLA / demerit tracking
+- SEA-LION AI assistance
+- Management and council reporting
+
+If an estate already has a suitable resident master or resident portal, Axon can synchronize with it. If the estate only has spreadsheets or an inaccessible legacy database, Axon can maintain its own Resident Master.
+
+## Resident Master & Unit Directory
+
+Optional Axon module:
+- units, owners, tenants and occupants
+- contact and emergency-contact records
+- move-in / move-out dates
+- communication preferences
+- source system: Homeplus / Excel / Manual / API
+- synchronization status and last-sync date
+- CSV / Excel import
+- API synchronization
+- manual entry
+- CSV / JSON export
+
+This module does **not require replacement of Homeplus** if Homeplus remains the approved source of record.
+
+## MA Communications Centre
+
+The MA/Admin workspace is intended to include:
+- Notices
+- Monthly Circulars
+- Mass Email
+- Email history
+- SMS notices
+- Communication templates
+- Audience targeting by all residents / owners / tenants / blocks / units
+- publish/expiry dates
+- read acknowledgement
+- resident portal/PWA publication
+
+Typical notice categories:
+General, Maintenance, Water Shutdown, Lift, Security, Facilities, Event, AGM/Council, Emergency and Contractor Works.
+
+Existing Axon SMTP / Mailtrap integration can be used for controlled email delivery.
+
+## SMS
+
+SMS is an **optional subscription / usage-based service**.
+
+Admin should show:
+
+**SMS Gateway Subscription Required — usage charges apply.**
+
+Potential connector options include Twilio, MessageBird or a client-selected SMS API. SMS subscription and usage charges are quoted separately from the core application.
+
+Critical messages may use:
+- Resident PWA notification
+- Email
+- SMS, when subscribed/configured
+
+## Automation Centre
+
+The objective is to move recurring MA work out of spreadsheets and manual reminders into configurable automation.
+
+Example automations:
+- Vendor contract expiry
+- Equipment warranty expiry
+- Maintenance schedule reminders
+- Monthly vendor attendance report
+- Monthly resident circular
+- Outstanding ticket escalation
+- SLA warning escalation
+- Work order overdue reminder
+- Deposit follow-up
+- Contractor pass expiry
+- Cleaning/patrol missed checkpoint alert
+- Resident move-in / move-out checklist
+
+Axon can initially import CSV/Excel-based processes, map the fields, and progressively convert them into structured workflows.
+
+## MA Tasks & Escalation
+
+A unified MA work queue can combine tasks generated from:
+- resident tickets
+- work orders
+- vendor exceptions
+- patrol exceptions
+- notices
+- manual tasks
+- automation rules
+
+Typical states:
+New → Assigned → In Progress → Waiting Vendor → Waiting Resident → Escalated → Completed.
+
+## Resident Portal / PWA
+
+The Resident Portal is designed as an installable **Progressive Web App (PWA)**.
+
+Residents can:
+- log in
+- report issues
+- attach photographs
+- track issue status
+- add comments or further evidence
+- view MA replies
+- reopen eligible resolved issues
+- register contractors/movers
+- view approved passes
+- receive notices and monthly circulars
+- acknowledge notices
+- manage profile/unit information
+- view notifications
+
+Ticket flow:
+Reported → Assigned → In Progress → Waiting Resident → Resolved.
+
+Internal MA notes remain private.
+
+The PWA can be installed on supported iOS, Android and desktop browsers. Native App Store / Google Play packaging can be offered separately if required.
+
+## Resident Notices & Circulars
+
+Resident PWA should provide:
+- Notice feed
+- Monthly circular archive
+- Emergency banner
+- Attachments
+- Search/filter by category/month
+- Read/acknowledge
+- Ticket/notice notification centre
+
+## Expanded Integration Categories
+
+### Resident / Property Systems
+Homeplus, iCondo, BuildingLink, Excel/CSV, Custom API, Axon Resident Master
+
+### Facility Booking
+Homeplus, iCondo, BuildingLink, Custom API, optional Standalone Axon booking only when required
+
+### Gate / Access / LPR
+Homeplus LPR, Hikvision, Dahua, Suprema, ZKTeco, Custom API
+
+### CCTV
+Existing CCTV, Hikvision, Dahua, Custom API
+
+### Finance / Accounting
+Excel/CSV, Custom API, Xero, QuickBooks — example connectors, subject to API availability
+
+### Communications
+Axon SMTP / Mailtrap, optional SMS gateway, WhatsApp Business/API where separately approved
+
+### AI
+SEA-LION — AI Singapore
+
+All integrations must be labelled accurately as **Current / Connected / Pending API / Coming Soon / Optional**.
+
+## Expanded Optional Quote Modules
+
+In addition to the original six operational modules, the commercial proposal may separately quote:
+
+1. Resident Master & Unit Directory
+2. Communications Centre / Mass Email
+3. SMS Gateway Integration & Subscription
+4. Automation Centre / Excel-to-Workflow Automation
+5. MA Task & Escalation Management
+6. Resident PWA Portal
+
+These are add-on modules and **do not require replacement of existing facility booking or gate systems**.

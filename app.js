@@ -68,3 +68,44 @@ document.getElementById('generateAiSummary').onclick=async()=>{
   else{box.innerHTML='<b>AI simulation summary</b><p>Overall estate accountability is strong. Vendor attendance is 96%, while 93% of sampled jobs contain the required evidence. Resident service volume remains manageable with 84 tickets resolved at an average of 5 hours 22 minutes. Checkpoint compliance is 97%, although three high-priority issues require management attention. Axon recommends focusing on evidence completeness, unresolved SLA items and finalising the security demerit rule before financial automation is enabled.</p>'}
   addActivity('Management summary generated','Operational data converted into council-ready narrative (demo)');
 };
+document.querySelectorAll('.pwa-nav').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.pwa-nav').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.pwa-view').forEach(x=>x.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(btn.dataset.pwatarget).classList.add('active');
+}));
+document.querySelectorAll('[data-pwajump]').forEach(btn=>btn.addEventListener('click',()=>{
+  const target=btn.dataset.pwajump;
+  const nav=[...document.querySelectorAll('.pwa-nav')].find(x=>x.dataset.pwatarget===target);
+  if(nav) nav.click();
+}));
+document.getElementById('installPwaDemo')?.addEventListener('click',()=>{
+  alert('PWA demo: on supported devices the resident can install this web app from the browser menu / Add to Home Screen. Native app-store packaging can be offered separately.');
+});
+document.getElementById('pwaPhoto')?.addEventListener('change',e=>{
+  const f=e.target.files?.[0]; document.getElementById('photoName').textContent=f?'Selected: '+f.name:'No photo selected.';
+});
+document.getElementById('pwaSubmitIssue')?.addEventListener('click',()=>{
+  const id='PV-2026-'+Math.floor(1100+Math.random()*800);
+  document.getElementById('pwaIssueResult').innerHTML='<b>'+id+' created.</b> Status: Reported. MA has been notified. Photo/evidence metadata attached (demo).';
+  addActivity('Resident issue submitted',id+' · '+document.getElementById('pwaCategory').value+' · Resident PWA');
+});
+document.getElementById('pwaAddFollowup')?.addEventListener('click',()=>{
+  document.getElementById('pwaFollowupResult').textContent='Follow-up comment and additional evidence added to PV-2026-1042 (demo). MA notified. Internal MA notes remain private.';
+  addActivity('Resident follow-up added','PV-2026-1042 · comment/photo evidence added');
+});
+document.getElementById('pwaReopen')?.addEventListener('click',()=>{
+  document.getElementById('pwaFollowupResult').textContent='Issue reopened in demo and routed back to MA review.';
+  addActivity('Resident reopened issue','PV-2026-1042 returned to MA queue');
+});
+document.querySelectorAll('.ackNotice').forEach(btn=>btn.addEventListener('click',()=>{
+  if(!btn.classList.contains('done')){
+    btn.classList.add('done'); btn.textContent='Acknowledged';
+    const c=document.getElementById('unreadNoticeCount'); c.textContent=String(Math.max(0,Number(c.textContent)-1));
+    addActivity('Resident acknowledged notice',btn.closest('.notice-item').querySelector('b').textContent);
+  }
+}));
+document.getElementById('noticeSearch')?.addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase();
+  document.querySelectorAll('#noticeList .notice-item').forEach(n=>n.classList.toggle('pwa-note-hidden',!n.dataset.notice.toLowerCase().includes(q)));
+});

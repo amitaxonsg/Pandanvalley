@@ -13,7 +13,8 @@ Axon 1Pro Smart Estate Management System v2.0 (SEMS)
 - Up to 500 residents: **SGD 200 / month**
 - 501–700 residents: **SGD 300 / month**
 - 701–1,000 residents: **SGD 400 / month**
-- Above 1,000 residents: **Custom Pricing**
+- 1,001–3,000 residents: **SGD 400 / month**
+- Above 3,000 residents: **Custom Pricing**
 
 ### Annual Maintenance / Dedicated Infrastructure
 **SGD 2,000 / year**
@@ -57,7 +58,7 @@ Facility booking, gate/LPR, access control, CCTV, payment and other specialist t
 
 ## Custom Pricing
 
-For more than 1,000 residents, special integrations, enterprise requirements or custom deployment:
+For estates above 3,000 residents, special integrations, enterprise requirements or custom deployment:
 
 **support@axon.com.sg**
 

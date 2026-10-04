@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pandan Valley - Pre-Quotation Requirements Discovery</title>
+<link rel="stylesheet" href="discovery.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<header class="brandbar">
+  <img id="axonLogo" src="https://1prohost.com/assets/axon-1pro-logos-B9lV4mEm.png" alt="Axon 1Pro Solutions"/>
+  <div class="brandtext">
+    <strong>Axon 1Pro Solutions</strong>
+    <span>axon.com.sg · support@axon.com.sg</span>
+  </div>
+  <a class="back" href="index.html">← Back to MVP</a>
+</header>
+
+<main>
+<section class="hero">
+  <span class="eyebrow">MCST 581 · Pandan Valley Condominium</span>
+  <h1>Pre-Quotation Requirements & Process Discovery</h1>
+  <p>This questionnaire is required before Axon can provide an accurate and commercially responsible quotation for the proposed Smart Estate Management System.</p>
+</section>
+
+<section class="notice">
+  <h2>Why Axon cannot responsibly issue a fixed quotation from the feature list alone</h2>
+  <p>The requested functions describe <b>what the system should achieve</b>, but development cost is materially affected by <b>how Pandan Valley currently operates</b>, who uses each process, approval rules, exception handling, existing systems, security/privacy requirements, hardware already available, hardware that must be purchased, and third-party integrations.</p>
+  <p>AI-assisted development tools can reduce development time and coding cost, but they do not replace process discovery. Axon's objective is to introduce an application that is effective for Pandan Valley's actual operations rather than simply reproduce existing manual steps in digital form.</p>
+  <div class="callout">Please complete this form as accurately as possible. Where a question is not applicable or not yet decided, select or enter <b>Not Sure / To Be Confirmed</b>.</div>
+</section>
+
+<form id="discoveryForm">
+  <section class="formsec">
+    <h2>1. Contact & Estate Information</h2>
+    <div class="grid">
+      <label>Completed by<input name="completedBy" placeholder="Name"/></label>
+      <label>Designation<input name="designation" placeholder="Property Officer / Condo Manager / Council"/></label>
+      <label>Email<input type="email" name="email" placeholder="name@pandanvalley.com.sg"/></label>
+      <label>Contact number<input name="phone"/></label>
+      <label>Approx. number of residential units<input name="units" type="number"/></label>
+      <label>Approx. number of active resident users<input name="residentUsers" type="number"/></label>
+      <label>MA / office staff count<input name="maStaff" type="number"/></label>
+      <label>Security staff count<input name="securityStaff" type="number"/></label>
+      <label>Cleaning / landscape staff count<input name="opsStaff" type="number"/></label>
+      <label>Regular vendor companies<input name="vendorCompanies" type="number"/></label>
+    </div>
+  </section>
+
+  <section class="formsec">
+    <h2>2. Existing Systems & Current Process</h2>
+    <label>What systems are currently used for estate management, facility booking, resident communication, visitor/contractor access, work orders, attendance or feedback?<textarea name="existingSystems" placeholder="Please list software, spreadsheets, paper forms, WhatsApp, email, access control systems, etc."></textarea></label>
+    <label>Which existing systems must remain and which can be replaced?<textarea name="systemsRemain"></textarea></label>
+    <label>Please describe the current process from receiving an issue/request through assignment, work completion and final closure.<textarea name="currentProcess"></textarea></label>
+    <label>What are the main problems with the current process?<textarea name="painPoints"></textarea></label>
+  </section>
+
+  <section class="formsec">
+    <h2>3. Vendor Attendance, GPS & Identity</h2>
+    <div class="grid">
+      <label>Who currently records vendor attendance?<select name="attendanceOwner"><option></option><option>Security</option><option>MA Office</option><option>Vendor Supervisor</option><option>Self check-in</option><option>Other</option></select></label>
+      <label>Attendance recorded per<select name="attendanceLevel"><option></option><option>Individual worker</option><option>Vendor company</option><option>Both</option></select></label>
+      <label>Standard grace period for lateness<input name="lateGrace" placeholder="e.g. 10 minutes"/></label>
+      <label>Multiple shifts?<select name="multipleShifts"><option></option><option>Yes</option><option>No</option><option>Some vendors only</option></select></label>
+      <label>Can workers leave and re-enter during shift?<select name="reentry"><option></option><option>Yes</option><option>No</option><option>Approval required</option></select></label>
+      <label>Who should receive late/absence alerts?<input name="attendanceAlerts"/></label>
+    </div>
+    <label>What should happen when GPS is unavailable, inaccurate or a worker does not carry a phone?<textarea name="gpsException"></textarea></label>
+    <label>Is facial recognition mandatory, optional, or can another identity method be used?<select name="faceRequirement"><option></option><option>Mandatory</option><option>Optional</option><option>Alternative identity method acceptable</option><option>To be confirmed</option></select></label>
+  </section>
+
+  <section class="formsec">
+    <h2>4. Digital Work Orders & Before/After Evidence</h2>
+    <div class="grid">
+      <label>Who creates work orders?<input name="workCreator"/></label>
+      <label>Who assigns vendors?<input name="workAssigner"/></label>
+      <label>Who approves completion?<input name="workApprover"/></label>
+      <label>Photo requirement<select name="photoRequirement"><option></option><option>Before + After mandatory</option><option>After only</option><option>Depends on job type</option></select></label>
+      <label>Video required?<select name="videoRequired"><option></option><option>No</option><option>For selected jobs</option><option>Yes</option></select></label>
+      <label>Can vendors edit reports after submission?<select name="editReports"><option></option><option>No</option><option>Yes before approval</option><option>Yes with audit history</option></select></label>
+    </div>
+    <label>List common work-order categories and any category-specific checklists.<textarea name="workCategories"></textarea></label>
+    <label>How long must photos, videos and work evidence be retained?<input name="evidenceRetention" placeholder="e.g. 1 year / 3 years / contract period"/></label>
+  </section>
+
+  <section class="formsec">
+    <h2>5. Contractor / Mover Registration & Gate Access</h2>
+    <div class="grid">
+      <label>Who initiates registration?<select name="contractorInitiator"><option></option><option>Resident</option><option>MA Office</option><option>Contractor</option><option>Either resident or MA</option></select></label>
+      <label>MA approval required?<select name="contractorApproval"><option></option><option>Yes</option><option>No</option><option>Only certain categories</option></select></label>
+      <label>Deposit involved?<select name="deposit"><option></option><option>Yes</option><option>No</option></select></label>
+      <label>Number of entrances / gates<input name="gates" type="number"/></label>
+      <label>Pass type preferred<select name="passType"><option></option><option>Single entry</option><option>Multiple entry during valid period</option><option>Depends on visitor type</option></select></label>
+      <label>Preferred pass delivery<select name="passDelivery"><option></option><option>Email</option><option>SMS</option><option>WhatsApp</option><option>Email + SMS</option><option>Other</option></select></label>
+    </div>
+    <label>What information must security see when scanning a pass?<textarea name="gateInfo" placeholder="Company, visitor name, unit, vehicle, approval, valid time, deposit, remarks, etc."></textarea></label>
+    <label>Describe current access control / barrier / intercom system and whether an API/integration is available.<textarea name="gateIntegration"></textarea></label>
+  </section>
+
+  <section class="formsec">
+    <h2>6. Security, Cleaning, Landscape & NFC Routes</h2>
+    <div class="grid">
+      <label>Approx. patrol / work checkpoints<input name="checkpointCount" type="number"/></label>
+      <label>Different day/night routes?<select name="routeTypes"><option></option><option>Yes</option><option>No</option><option>To be confirmed</option></select></label>
+      <label>Preferred checkpoint technology<select name="checkpointTech"><option></option><option>NFC</option><option>QR</option><option>NFC + GPS</option><option>Not sure</option></select></label>
+      <label>Staff device policy<select name="devicePolicy"><option></option><option>Company devices</option><option>BYOD personal phones</option><option>Mix of both</option><option>No phones currently</option></select></label>
+    </div>
+    <label>Please describe required security patrol, cleaning and landscape routes/frequencies.<textarea name="routeDetails"></textarea></label>
+    <label>What should happen when a checkpoint is missed, late or completed too quickly?<textarea name="checkpointException"></textarea></label>
+  </section>
+
+  <section class="formsec">
+    <h2>7. Resident Feedback & Ticket Resolution</h2>
+    <div class="grid">
+      <label>Current feedback channels<input name="feedbackChannels" placeholder="Email / WhatsApp / phone / counter / app"/></label>
+      <label>Resident login required?<select name="residentLogin"><option></option><option>Yes</option><option>No - secure ticket link is enough</option><option>Depends on issue</option></select></label>
+      <label>Anonymous reports allowed?<select name="anonymousReports"><option></option><option>Yes</option><option>No</option><option>Selected categories only</option></select></label>
+      <label>Resident confirmation before closure?<select name="closureConfirm"><option></option><option>Yes</option><option>No</option><option>Optional</option></select></label>
+    </div>
+    <label>List ticket categories and expected response / resolution SLA for each category.<textarea name="ticketSla"></textarea></label>
+    <label>Who can assign, reassign, resolve and close a ticket?<textarea name="ticketRoles"></textarea></label>
+    <label>What information should residents be able to see, and what internal notes must remain private?<textarea name="ticketVisibility"></textarea></label>
+  </section>
+
+  <section class="formsec">
+    <h2>8. SLA, Demerit Points & Financial Penalties</h2>
+    <div class="warning">This section materially affects quotation and system logic. Please attach/provide the relevant MA/vendor SLA clauses during the follow-up review.</div>
+    <label>Describe current demerit rules, response thresholds, resolution thresholds and penalty formulas.<textarea name="slaRules"></textarea></label>
+    <label>Are there maximum penalty caps, exemptions, appeal rules or manual overrides?<textarea name="slaExceptions"></textarea></label>
+    <label>Who has authority to approve a financial deduction?<input name="penaltyApprover"/></label>
+    <label>Should the system only recommend penalties for human approval?<select name="humanApproval"><option></option><option>Yes - recommended by Axon</option><option>No - automatic action requested</option><option>To be confirmed</option></select></label>
+  </section>
+
+  <section class="formsec">
+    <h2>9. AI-Assisted Functions</h2>
+    <p class="hint">Select functions Pandan Valley would like Axon to evaluate. AI output is recommended as advisory until validated by management.</p>
+    <div class="checks">
+      <label><input type="checkbox" name="aiFeatures" value="Complaint classification"/> Complaint classification and routing</label>
+      <label><input type="checkbox" name="aiFeatures" value="Duplicate complaint detection"/> Duplicate complaint detection</label>
+      <label><input type="checkbox" name="aiFeatures" value="Resident message summarisation"/> Resident message summarisation</label>
+      <label><input type="checkbox" name="aiFeatures" value="Before-after image review"/> Before/after image quality review</label>
+      <label><input type="checkbox" name="aiFeatures" value="Attendance anomaly detection"/> Attendance anomaly detection</label>
+      <label><input type="checkbox" name="aiFeatures" value="Vendor performance scoring"/> Vendor performance scoring</label>
+      <label><input type="checkbox" name="aiFeatures" value="Recurring maintenance pattern detection"/> Recurring maintenance pattern detection</label>
+      <label><input type="checkbox" name="aiFeatures" value="Monthly report generation"/> Monthly management/council report generation</label>
+      <label><input type="checkbox" name="aiFeatures" value="Draft resident replies"/> Draft resident replies for staff approval</label>
+    </div>
+    <label>Other AI use cases or restrictions<textarea name="aiOther"></textarea></label>
+  </section>
+
+  <section class="formsec">
+    <h2>10. Hardware & On-Site Infrastructure</h2>
+    <p class="hint">Please identify what Pandan Valley already owns and what may need to be purchased. Hardware requirements can materially affect project cost.</p>
+    <table class="hardware">
+      <thead><tr><th>Item</th><th>Already Available?</th><th>Qty / Model / Notes</th><th>Need Axon Recommendation?</th></tr></thead>
+      <tbody>
+        <tr><td>Office PCs / laptops</td><td><select name="hw_pc"><option></option><option>Yes</option><option>No</option><option>Partial</option></select></td><td><input name="hw_pc_notes"/></td><td><select name="hw_pc_rec"><option></option><option>Yes</option><option>No</option></select></td></tr>
+        <tr><td>Security gate PC / tablet</td><td><select name="hw_gate"><option></option><option>Yes</option><option>No</option><option>Partial</option></select></td><td><input name="hw_gate_notes"/></td><td><select name="hw_gate_rec"><option></option><option>Yes</option><option>No</option></select></td></tr>
+        <tr><td>Vendor/staff smartphones</td><td><select name="hw_phone"><option></option><option>Yes</option><option>No</option><option>BYOD</option><option>Partial</option></select></td><td><input name="hw_phone_notes"/></td><td><select name="hw_phone_rec"><option></option><option>Yes</option><option>No</option></select></td></tr>
+        <tr><td>NFC-capable Android/iPhone devices</td><td><select name="hw_nfcphone"><option></option><option>Yes</option><option>No</option><option>Not sure</option></select></td><td><input name="hw_nfcphone_notes"/></td><td><select name="hw_nfcphone_rec"><option></option><option>Yes</option><option>No</option></select></td></tr>
+        <tr><td>NFC checkpoint tags</td><td><select name="hw_nfctags"><option></option><option>Yes</option><option>No</option></select></td><td><input name="hw_nfctags_notes"/></td><td><select name="hw_nfctags_rec"><option></option><option>Yes</option><option>No</option></select></td></tr>
+        <tr><td>QR scanners / camera devices</td><td><select name="hw_qr"><option></option><option>Yes</option><option>No</option><option>Phone camera preferred</option></select></td><td><input name="hw_qr_notes"/></td><td><select name="hw_qr_rec"><option></option><option>Yes</option><option>No</option></select></td></tr>
+        <tr><td>Wi-Fi coverage at gates / blocks / facilities</td><td><select name="hw_wifi"><option></option><option>Good coverage</option><option>Partial coverage</option><option>Poor / unknown</option></select></td><td><input name="hw_wifi_notes"/></td><td><select name="hw_wifi_rec"><option></option><option>Yes</option><option>No</option></select></td></tr>
+        <tr><td>Access control / barrier controller</td><td><select name="hw_barrier"><option></option><option>Yes</option><option>No</option><option>Not sure</option></select></td><td><input name="hw_barrier_notes"/></td><td><select name="hw_barrier_rec"><option></option><option>Yes</option><option>No</option></select></td></tr>
+        <tr><td>CCTV / NVR system</td><td><select name="hw_cctv"><option></option><option>Yes</option><option>No</option></select></td><td><input name="hw_cctv_notes"/></td><td><select name="hw_cctv_rec"><option></option><option>Yes</option><option>No</option></select></td></tr>
+        <tr><td>Printer / pass printer</td><td><select name="hw_printer"><option></option><option>Yes</option><option>No</option><option>Not required</option></select></td><td><input name="hw_printer_notes"/></td><td><select name="hw_printer_rec"><option></option><option>Yes</option><option>No</option></select></td></tr>
+      </tbody>
+    </table>
+    <label>Other hardware, network or site constraints<textarea name="hardwareOther"></textarea></label>
+  </section>
+
+  <section class="formsec">
+    <h2>11. Integrations & Third-Party Services</h2>
+    <div class="checks">
+      <label><input type="checkbox" name="integrations" value="Pandan Valley website"/> Existing Pandan Valley website</label>
+      <label><input type="checkbox" name="integrations" value="Facility booking"/> Existing facility booking system</label>
+      <label><input type="checkbox" name="integrations" value="Resident database"/> Resident database</label>
+      <label><input type="checkbox" name="integrations" value="Access control/barrier"/> Access control / barrier system</label>
+      <label><input type="checkbox" name="integrations" value="CCTV"/> CCTV / NVR</label>
+      <label><input type="checkbox" name="integrations" value="Email"/> Email</label>
+      <label><input type="checkbox" name="integrations" value="SMS"/> SMS gateway</label>
+      <label><input type="checkbox" name="integrations" value="WhatsApp"/> WhatsApp Business/API</label>
+      <label><input type="checkbox" name="integrations" value="Microsoft 365"/> Microsoft 365</label>
+      <label><input type="checkbox" name="integrations" value="Accounting"/> Accounting / finance software</label>
+      <label><input type="checkbox" name="integrations" value="Payment gateway"/> Payment gateway</label>
+    </div>
+    <label>Provide system/vendor names, API documentation or technical contact details where available.<textarea name="integrationNotes"></textarea></label>
+  </section>
+
+  <section class="formsec">
+    <h2>12. Security, Privacy & Data Retention</h2>
+    <div class="grid">
+      <label>Biometric processing required?<select name="biometric"><option></option><option>Yes</option><option>No</option><option>To be confirmed</option></select></label>
+      <label>Desired data hosting location<input name="hostingLocation" placeholder="Singapore / no preference / to be confirmed"/></label>
+      <label>Required retention period<input name="retention"/></label>
+      <label>Single sign-on required?<select name="sso"><option></option><option>Yes</option><option>No</option><option>Not sure</option></select></label>
+    </div>
+    <label>Who should have access to resident, vendor and biometric/personal data?<textarea name="dataAccess"></textarea></label>
+    <label>Any PDPA, audit, cybersecurity, council or insurer requirements Axon should account for?<textarea name="securityRequirements"></textarea></label>
+  </section>
+
+  <section class="formsec">
+    <h2>13. Priorities, Reports & Project Expectations</h2>
+    <label>Which functions are MUST HAVE for initial launch?<textarea name="mustHave"></textarea></label>
+    <label>Which functions can be Phase 2 / future enhancement?<textarea name="phase2"></textarea></label>
+    <label>Required reports / exports / dashboards<textarea name="reports" placeholder="Daily attendance, monthly vendor scorecard, council PDF, SLA report, Excel export, etc."></textarea></label>
+    <div class="grid">
+      <label>Target launch period<input name="targetLaunch" placeholder="Month / quarter / no fixed date"/></label>
+      <label>Budget range, if available<input name="budget" placeholder="Optional"/></label>
+    </div>
+    <label>Any other requirement, concern or suggestion<textarea name="otherNotes"></textarea></label>
+  </section>
+
+  <section class="confirm">
+    <label><input type="checkbox" name="confirmAccuracy" required/> The information provided is accurate to the best of our current knowledge and may be clarified during Axon's process review meeting.</label>
+  </section>
+
+  <section class="actions">
+    <button type="button" id="saveBtn">Save Progress</button>
+    <button type="button" id="jsonBtn">Download JSON</button>
+    <button type="button" id="txtBtn">Download TXT</button>
+    <button type="button" id="pdfBtn" class="primary">Download PDF Report</button>
+    <button type="button" id="emailBtn">Email Axon</button>
+    <button type="button" id="clearBtn" class="danger">Clear Saved Form</button>
+  </section>
+  <div id="status" class="status">Your progress is automatically saved in this browser.</div>
+</form>
+
+<section class="nextstep">
+  <h2>What happens after submission?</h2>
+  <ol>
+    <li>Pandan Valley completes and downloads this discovery report.</li>
+    <li>Email the PDF (and optionally JSON) to <b>support@axon.com.sg</b>.</li>
+    <li>Axon reviews the responses and identifies clarification points, integrations and hardware requirements.</li>
+    <li>Axon conducts a process-mapping discussion with the relevant Pandan Valley stakeholders.</li>
+    <li>Axon then issues a scoped proposal with development cost, optional modules, hardware, third-party/API fees and recurring support/hosting separately identified.</li>
+  </ol>
+</section>
+</main>
+
+<footer>Axon 1Pro Solutions · axon.com.sg · support@axon.com.sg</footer>
+<script src="discovery.js"></script>
+</body>
+</html>

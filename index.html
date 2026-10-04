@@ -341,6 +341,111 @@
   </div>
 </section>
 
+<section class="card resident-pwa-demo" id="resident-pwa-demo">
+  <div class="section-title">
+    <div>
+      <span class="mini-label">MUST-HAVE RESIDENT EXPERIENCE</span>
+      <h2>Resident Login + Incident Reporting + Notices + Circulars + PWA</h2>
+      <p class="muted">Residents should be able to use Axon as an installable web app to report issues with photos, follow progress, receive MA notices and circulars, and view contractor/mover updates.</p>
+    </div>
+    <span class="soft-pill">Playable Concept</span>
+  </div>
+
+  <div class="pwa-shell">
+    <aside class="pwa-side">
+      <div class="pwa-brand"><b>Axon 1Pro</b><span>Resident PWA</span></div>
+      <button class="pwa-nav active" data-pwatarget="pwa-home">Home</button>
+      <button class="pwa-nav" data-pwatarget="pwa-report">Report Issue</button>
+      <button class="pwa-nav" data-pwatarget="pwa-issues">My Issues</button>
+      <button class="pwa-nav" data-pwatarget="pwa-notices">Notices & Circulars</button>
+      <button class="pwa-nav" data-pwatarget="pwa-passes">Contractor / Mover</button>
+      <button class="pwa-nav" data-pwatarget="pwa-profile">My Unit</button>
+      <button id="installPwaDemo" class="pwa-install">Install App / Add to Home Screen</button>
+    </aside>
+
+    <div class="pwa-main">
+      <div class="pwa-top"><div><b>Welcome, Demo Resident</b><span>Unit #08-214 · Pandan Valley</span></div><span class="pill good">Logged In</span></div>
+
+      <div id="pwa-home" class="pwa-view active">
+        <div class="pwa-kpis">
+          <div><span>Open Issues</span><strong>2</strong></div>
+          <div><span>Unread Notices</span><strong id="unreadNoticeCount">3</strong></div>
+          <div><span>Active Passes</span><strong>1</strong></div>
+          <div><span>Notifications</span><strong>4</strong></div>
+        </div>
+        <div class="pwa-alert">Emergency / Important notice banner can appear here for water shutdown, lift outage, security advisory or urgent estate works.</div>
+        <div class="pwa-cards">
+          <button class="pwa-action" data-pwajump="pwa-report"><b>Report an Issue</b><span>Attach photo and track progress</span></button>
+          <button class="pwa-action" data-pwajump="pwa-notices"><b>View Notices</b><span>MA circulars and estate updates</span></button>
+          <button class="pwa-action" data-pwajump="pwa-passes"><b>Contractor / Mover</b><span>Register and track approved access</span></button>
+        </div>
+      </div>
+
+      <div id="pwa-report" class="pwa-view">
+        <h3>Report an Estate Issue</h3>
+        <div class="pwa-form-grid">
+          <label>Category<select id="pwaCategory"><option>Cleaning</option><option>Security</option><option>Pest Control</option><option selected>Light</option><option>Facilities</option><option>Landscape</option><option>Dispute</option><option>Safety</option><option>Others</option><option>Compliment</option></select></label>
+          <label>Location<select id="pwaLocation"><option>Block 2 Lift Lobby</option><option>Pool Deck</option><option>Carpark</option><option>Common Area</option></select></label>
+        </div>
+        <label>Urgency<select id="pwaUrgency"><option>Normal</option><option>High</option><option>Safety Critical</option></select></label>
+        <label>Description<textarea id="pwaDescription">The ceiling light near the lift is flickering again.</textarea></label>
+        <label>Photo<input id="pwaPhoto" type="file" accept="image/*"/></label>
+        <div id="photoName" class="subtle">No photo selected.</div>
+        <button id="pwaSubmitIssue">Submit Issue</button>
+        <div id="pwaIssueResult" class="result subtle">Your report will receive a ticket number and can be tracked from My Issues.</div>
+      </div>
+
+      <div id="pwa-issues" class="pwa-view">
+        <h3>My Issues</h3>
+        <div class="resident-ticket">
+          <div><b>PV-2026-1042 · Light</b><span>Block 2 Lift Lobby</span></div><span class="pill warn">In Progress</span>
+        </div>
+        <div class="ticket-timeline">
+          <span class="done">Reported</span><span class="done">Assigned</span><span class="done">In Progress</span><span>Waiting Resident</span><span>Resolved</span>
+        </div>
+        <div class="resident-reply"><b>MA reply:</b> Technician has been assigned and is expected to attend this afternoon.</div>
+        <label>Add follow-up comment<textarea id="pwaFollowup">The light is still flickering this morning.</textarea></label>
+        <label>Add another photo<input id="pwaFollowupPhoto" type="file" accept="image/*"/></label>
+        <button id="pwaAddFollowup">Add Follow-Up</button>
+        <button id="pwaReopen" class="secondary-action">Reopen Resolved Issue (Demo)</button>
+        <div id="pwaFollowupResult" class="result subtle">Internal MA notes are never shown to residents.</div>
+      </div>
+
+      <div id="pwa-notices" class="pwa-view">
+        <div class="section-title"><div><h3>Notices & Monthly Circulars</h3><p class="muted">Published by the Managing Agent.</p></div><input id="noticeSearch" placeholder="Search notices..." /></div>
+        <div id="noticeList">
+          <article class="notice-item" data-notice="Water Shutdown Block 2 maintenance">
+            <div><span class="notice-type emergency">MAINTENANCE</span><b>Water Shutdown — Block 2</b><small>6 Oct 2026 · 10:00 AM–2:00 PM</small></div>
+            <button class="ackNotice">Acknowledge</button>
+          </article>
+          <article class="notice-item" data-notice="October Monthly Circular estate update">
+            <div><span class="notice-type">CIRCULAR</span><b>October 2026 Monthly Circular</b><small>Estate updates · maintenance · security · events</small></div>
+            <button class="ackNotice">Mark Read</button>
+          </article>
+          <article class="notice-item" data-notice="Contractor Works lift lobby notice">
+            <div><span class="notice-type">CONTRACTOR WORKS</span><b>Lift Lobby Improvement Works</b><small>8–11 Oct 2026 · Block 3</small></div>
+            <button class="ackNotice">Mark Read</button>
+          </article>
+        </div>
+        <div class="flow"><b>Resident communication</b><span>MA publishes notice/circular → Resident PWA notification → Resident opens and acknowledges → MA can see read/acknowledgement status.</span></div>
+      </div>
+
+      <div id="pwa-passes" class="pwa-view">
+        <h3>My Contractor / Mover Passes</h3>
+        <div class="resident-ticket"><div><b>PV-CT-8842 · ABC Movers</b><span>Vehicle GBD 4821 K · Gate 2 · Multiple entry</span></div><span class="pill good">Approved</span></div>
+        <p class="muted">Where an existing system such as Homeplus already manages gate/LPR access, Axon can show/synchronise approval status rather than replacing the gate engine.</p>
+      </div>
+
+      <div id="pwa-profile" class="pwa-view">
+        <h3>My Unit / Profile</h3>
+        <div class="profile-grid"><div><span>Unit</span><b>#08-214</b></div><div><span>Resident Type</span><b>Owner</b></div><div><span>Email</span><b>demo.resident@example.com</b></div><div><span>Source</span><b>Homeplus / API Pending</b></div></div>
+        <p class="muted">Axon can use its own Resident Master if the existing system cannot provide the required records/API, or synchronize with the existing platform when available.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pwa-footnote"><b>PWA:</b> Installable on supported iOS, Android and desktop browsers. Native App Store / Google Play packaging can be offered separately if required.</div>
+</section>
 <section class="management-report card">
   <div class="section-title">
     <div><span class="mini-label">MANAGEMENT / COUNCIL VIEW</span><h2>October 2026 Sample Summary</h2></div>

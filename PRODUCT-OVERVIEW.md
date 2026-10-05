@@ -496,3 +496,20 @@ Email **support@axon.com.sg** for integration assessment.
 Provider subscriptions, API usage, message charges and vendor fees are normally paid directly by the client unless explicitly included in an Axon quotation.
 
 Custom connector development may be separately quoted.
+
+
+## Operational Differentiator
+
+The primary SEMS sales proposition is that estates can retain iCondo, Homeplus, BuildingLink or other resident/access platforms while adding a dedicated operational accountability layer.
+
+Core differentiators:
+1. Vendor Accountability — geo-fenced attendance, worker-level check-in/out, alerts and compliance reporting.
+2. Digital Work Orders — structured workflows, before/after evidence, video archive and MA inspection/sign-off.
+3. Rectification & Vendor Performance — rework tracking, performance scoring and contractor SLA monitoring.
+4. Patrol/Cleaning/Landscape Verification — NFC checkpoints, GPS/time verification and route compliance.
+5. MA Task & Escalation Queue — resident tickets, patrols and work orders in one prioritized audited queue.
+6. Automation Centre — contracts, warranties, maintenance schedules, overdue escalation and spreadsheet-to-workflow automation.
+7. SLA/Demerit/Compliance — evidence-linked records, compliance scoring and human-approved recommendations.
+8. AI Estate Intelligence — ticket classification, duplicate detection, attendance anomaly analysis and management/council summaries.
+
+This should be presented prominently in sales and demo experiences as: **SEMS does not replace your resident or access system. It connects to them and adds operations, accountability, automation and AI intelligence.**

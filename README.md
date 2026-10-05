@@ -1,4 +1,4 @@
-# Axon 1Pro Smart Estate Management System v2.0 — Pandan Valley
+# Axon 1Pro Smart Estate Management System v2.0 (SEMS)
 
 ## SEMS at a Glance
 
@@ -6,8 +6,8 @@
 
 A visual overview of how SEMS connects residents, MA/Admin, security, vendors, council, communications, automation, AI and open third-party integrations in one platform.
 
-**Client:** MCST 581 Pandan Valley Condominium  
 **Product:** Axon 1Pro Smart Estate Management System v2.0  
+**Current Pilot / Development Partner:** MCST 581 Pandan Valley Condominium  
 **Company:** Axon 1Pro Solutions  
 **Website:** axon.com.sg  
 **Support:** support@axon.com.sg

@@ -795,3 +795,20 @@ Email **support@axon.com.sg** for integration assessment.
 Provider subscriptions, API usage, message charges and vendor fees are normally paid directly by the client unless explicitly included in an Axon quotation.
 
 Custom connector development may be separately quoted.
+
+
+## Key Selling Point — Operational Layer
+
+SEMS is designed to **integrate with, not unnecessarily replace, existing resident and access systems** such as iCondo, Homeplus, BuildingLink, Excel/CSV workflows and custom APIs.
+
+The operational layer adds:
+- Vendor accountability with geo-fenced attendance and exception reporting
+- Digital work orders with mandatory before/after evidence and MA sign-off
+- Rectification workflows, vendor scoring and SLA monitoring
+- NFC/GPS patrol, cleaning and landscape verification
+- Unified MA task and escalation queues with complete audit trails
+- Automation for contracts, warranties, maintenance schedules and overdue work
+- SLA/demerit/compliance records with human approval before action
+- AI estate intelligence for classification, duplicate detection, anomaly analysis and management/council summaries
+
+**Positioning:** Connected. Accountable. Automated. Intelligent Estates.
